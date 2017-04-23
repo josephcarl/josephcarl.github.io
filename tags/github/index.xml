@@ -16,7 +16,7 @@
       <guid>https://josephcarl.github.io/2017/04/creating-a-reproducible-workflow-in-r/</guid>
       <description>
 
-&lt;p&gt;For starters, I&amp;rsquo;m happy to say that I fixed the website build error I had mentioned in my first blog post. After plenty of head scratching, rereading the tutorial, and staring at my &lt;code&gt;config.toml&lt;/code&gt; file, I finally realized I had misread the instructions and ended up with a tiny typo in my &lt;code&gt;publishDir&lt;/code&gt; file path, which prevented the documents from being copied to their new folder as expected. *facepalm*. I&amp;rsquo;m not sure how I managed to miss it the first time, but I&amp;rsquo;m glad to have it fixed now.&lt;/p&gt;
+&lt;p&gt;For starters, I&amp;rsquo;m happy to say that I fixed the website build error I had mentioned in my first blog post. After plenty of head scratching, rereading the tutorial, and staring at my &lt;code&gt;config.toml&lt;/code&gt; file, I finally realized I had a tiny typo in my &lt;code&gt;publishDir&lt;/code&gt; file path, which prevented the documents from being copied to their new folder as expected. *facepalm*. I&amp;rsquo;m not sure how I managed to miss it the first time, but I&amp;rsquo;m glad to have it fixed now.&lt;/p&gt;
 
 &lt;hr /&gt;
 
