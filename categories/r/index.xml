@@ -2,18 +2,64 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>R on Joseph Carl</title>
-    <link>/categories/r/index.xml</link>
+    <link>https://josephcarl.github.io/categories/r/index.xml</link>
     <description>Recent content in R on Joseph Carl</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="/categories/r/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://josephcarl.github.io/categories/r/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Creating a Reproducible Workflow in R</title>
+      <link>https://josephcarl.github.io/2017/04/creating-a-reproducible-workflow-in-r/</link>
+      <pubDate>Fri, 21 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://josephcarl.github.io/2017/04/creating-a-reproducible-workflow-in-r/</guid>
+      <description>
+
+&lt;p&gt;For starters, I&amp;rsquo;m happy to say that I fixed the website build error I had mentioned in my first blog post. After plenty of head scratching, rereading the tutorial, and staring at my &lt;code&gt;config.toml&lt;/code&gt; file, I finally realized I had misread the instructions and ended up with a tiny typo in my &lt;code&gt;publishDir&lt;/code&gt; file path, which prevented the documents from being copied to their new folder as expected. *facepalm*. I&amp;rsquo;m not sure how I managed to miss it the first time, but I&amp;rsquo;m glad to have it fixed now.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Having just started learning R last fall, it&amp;rsquo;s awesome to see how much I&amp;rsquo;ve learned in a short time. Though I was skeptical of R at first and nervous about its steep learning curve, I got past those reservations quickly, and some of my initial frustrations with learning it now seem trivial. I specifically remember being frustrated about sharing my code within an analysis document. I tried copying and pasting my R code into a Word document (sacrilege, I now know), and was frustrated that it did not preserve the code formatting. &lt;em&gt;But SAS does that!&lt;/em&gt;, I remember thinking. Thankfully, RStudio has made an easy fix to this problem with RMarkdown documents, plus a variety of other tools to make data analysis easy from start to finish.&lt;/p&gt;
+
+&lt;p&gt;Through learning RMarkdown, I became interested in the idea of reproducible research. In my undergrad program in Applied Economics, the importance of replicability was often stressed, particularly after the Reinhart-Rogoff debacle with their Excel spreadsheet came to light. However, my limited quantitative work with replicability mostly centered around saving my SAS scripts and writing a &amp;lsquo;codebook&amp;rsquo; in Word to document the changes I was making and steps of my analysis. This is not a bad setup, but certainly not very efficient or easily reproducible. Now that I&amp;rsquo;m comfortable with RStudio, I have embraced the tools they&amp;rsquo;ve provided to make an integrated, reproducible workflow all within RStudio, from data intake to report writing.&lt;/p&gt;
+
+&lt;p&gt;There are plenty of books and tutorials for the various tools RStudio provides, including RMarkdown, LaTeX integration, and git/Github. I really enjoyed the book &lt;a href=&#34;https://www.amazon.com/Reproducible-Research-Studio-Second-Chapman/dp/1498715370/ref=dp_ob_title_bk&#34;&gt;Reproducible Research in R and RStudio&lt;/a&gt; by Christopher Gandrud for a complete walkthrough of a reproducible workflow.&lt;/p&gt;
+
+&lt;p&gt;Rather than reinvent that wheel, I&amp;rsquo;d just like to share a few key things that I&amp;rsquo;ve learned for a generally reproducible workflow in RStudio and a couple great references for those ideas. These can change somewhat depending on your specific needs and project size, but they work well for me!&lt;/p&gt;
+
+&lt;h2 id=&#34;embrace-the-project-structure&#34;&gt;Embrace the Project Structure&lt;/h2&gt;
+
+&lt;p&gt;Among my first noob mistakes when I began learning R was to put all my R scripts in one folder, all my datasets in another folder, and my written reports in another folder, even from different projects. As you can imagine, this quickly became a confused mess, and it was very difficult to find the files I needed. Thankfully, I quickly caught on to RStudio&amp;rsquo;s idea of &amp;lsquo;Projects&amp;rsquo;, so I could keep things organized on a project-by-project basis, whether that&amp;rsquo;s a small class assignment or a large collaborative term project.&lt;/p&gt;
+
+&lt;h2 id=&#34;incorporate-git-github&#34;&gt;Incorporate Git/Github&lt;/h2&gt;
+
+&lt;p&gt;Though understanding git&amp;rsquo;s system of version control seems overwhelming and complicated at first, the fact that most of its functionality exists within a few commands (&lt;code&gt;pull&lt;/code&gt;, &lt;code&gt;add&lt;/code&gt;, &lt;code&gt;commit&lt;/code&gt;, and &lt;code&gt;push&lt;/code&gt;, namely) definitely helps! Even for small projects where version control may seem unnecessary, using git and hosting your project on Github or another online repo makes it really easy to keep a backup copy for later. Plus, it&amp;rsquo;s an easy way to share your ongoing projects, like this website! RStudio has integrated git and Github functionality, so you can do your push, pull, and commits all from within RStudio. Though some tasks with the command line still make sense, if you&amp;rsquo;re just doing a simple commit and push, you can do that within RStudio with just a couple clicks! I&amp;rsquo;ve found it&amp;rsquo;s easiest to set up the Github repo at the beginning of a project, though it is possible to sync an existing project to Github and add git version control after it&amp;rsquo;s begun.&lt;/p&gt;
+
+&lt;p&gt;For more information on incorporating git into RStudio, I&amp;rsquo;d recommend checking out &lt;a href=&#34;http://happygitwithr.com/&#34;&gt;Happy Git and GitHub for the useR&lt;/a&gt; by Jenny Bryan.&lt;/p&gt;
+
+&lt;h2 id=&#34;divide-and-conquer&#34;&gt;Divide and Conquer&lt;/h2&gt;
+
+&lt;p&gt;Even if you&amp;rsquo;re the only person working on a project, documenting your steps can make it easier for someone to see what you did, or even just to remind a future you looking back on it. Though I first began using R by throwing everything from reading in the data to outputting analysis and visuals into a single R script, I&amp;rsquo;ve found it can be hard to follow comments littered throughout the code.&lt;/p&gt;
+
+&lt;p&gt;One thing that&amp;rsquo;s helped is to reduce the size of this &amp;ldquo;master script&amp;rdquo; by moving my data cleaning into a separate script, with a name like &lt;code&gt;data-preparation.R&lt;/code&gt;. This is particularly useful if you have a lot of data cleaning, reshaping, or merging datasets in your analysis. Rather than making your computer re-run the dataset creation each time you run your analysis, use a dataset preparation script to save your data as a csv or similar data file, then run your analysis on that. Similarly, if you have created any verbose functions, consider moving them to a separate script that you can source in your analysis, plus then it will already be saved in its own script for any future analyses.&lt;/p&gt;
+
+&lt;p&gt;Separate from the master script, I use R Notebooks or an RMarkdown document for communicating my results. That way, the document has all the code necessary to recreate my analysis embedded in it, without adding the extra code from the script that I may want to save, but isn&amp;rsquo;t directly useful or necessary in my report.&lt;/p&gt;
+
+&lt;p&gt;Additionally, now that RStudio has released its R Notebooks as of a few months ago, I now sometimes use a &amp;lsquo;master notebook&amp;rsquo; instead of a master script. Similar to Jupyter Notebooks, they offer iterative computing for experimenting with code chunks, written comments for discussing your analysis, and include output and visualizations right below each code chunk. It&amp;rsquo;s got all the benefits of writing a report with RMarkdown, but faster because you don&amp;rsquo;t have to re-knit your document to see how your output changes. R Notebooks can also easily be compiled into HTML, PDF, or Word documents to share your work. If you want to know more about R Notebooks, RStudio has &lt;a href=&#34;http://rmarkdown.rstudio.com/r_notebooks.html&#34;&gt;a great introduction&lt;/a&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Those are some of my main ways of creating a reproducible workflow in RStudio. Of these ideas, using R Notebooks and RMarkdown documents to keep my code and analysis together have been the most useful for me. I&amp;rsquo;m sure my process will change and improve over time and as RStudio rolls out new features, but this general structure has worked well for me so far. The exact structure of a reproducible workflow will depend on the complexity of task at hand, and you may not be able to share everything on Github if you&amp;rsquo;re dealing with confidential information, but creating a reproducible workflow will help others understand your methods and help yourself in the future when looking back on your previous work!&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>First Blog Post</title>
-      <link>/2017/04/first-blog-post/</link>
+      <link>https://josephcarl.github.io/2017/04/first-blog-post/</link>
       <pubDate>Sun, 09 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>/2017/04/first-blog-post/</guid>
+      <guid>https://josephcarl.github.io/2017/04/first-blog-post/</guid>
       <description>&lt;p&gt;I finally took the plunge and am attempting blogging. Specifically, as this site is directly connected to my Github, it seems like a great place to showcase some of my projects and write about my experiences as I learn data analytics. Stack Overflow and numerous blogs have come to my aid as I have been learning R and Python over the last several months, so I hope I can use this blog to share some of the things I&amp;rsquo;ve learned as well. Plus, I have never built a website before, so this is also a great learning opportunity. I may also write about some topics not directly related to data analytics as time goes on. We&amp;rsquo;ll see how it goes!&lt;/p&gt;
 
 &lt;p&gt;This site was created with the &lt;code&gt;blogdown&lt;/code&gt; R package, RStudio, &lt;code&gt;Hugo&lt;/code&gt;, and &lt;a href=&#34;https://tclavelle.github.io/blog/blogdown_github/&#34;&gt;this&lt;/a&gt; helpful how-to guide. I am using the two-repository method described in the post. Unfortunately, I could not get my computer to recognize the &lt;code&gt;josephcarl.github.io&lt;/code&gt; folder via the &lt;code&gt;publishDir&lt;/code&gt; option in the &lt;code&gt;config.toml&lt;/code&gt; file, as described in the tutorial. I had to manually copy my files to that folder as a workaround, then commit the &lt;code&gt;josephcarl.github.io&lt;/code&gt; folder to its repo. Thankfully that doesn&amp;rsquo;t take too much work, but I&amp;rsquo;m hoping to find a better workaround soon. It&amp;rsquo;s going to be a work in progress, but I&amp;rsquo;m excited to get started!&lt;/p&gt;

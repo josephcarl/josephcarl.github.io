@@ -20,7 +20,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.19">
-    <title>First Blog Post</title>
+    <title>Creating a Reproducible Workflow in R</title>
     <meta name="author" content="Joseph Carl">
     <meta name="keywords" content="">
 
@@ -28,15 +28,15 @@
     
 
     
-    <meta name="description" content="I finally took the plunge and am attempting blogging. Specifically, as this site is directly connected to my Github, it seems like a great place to showcase some of my projects and write about my experiences as I learn data analytics. Stack Overflow and numerous blogs have come to my aid as I have been learning R and Python over the last several months, so I hope I can use this blog to share some of the things I&rsquo;ve learned as well.">
-    <meta property="og:description" content="I finally took the plunge and am attempting blogging. Specifically, as this site is directly connected to my Github, it seems like a great place to showcase some of my projects and write about my experiences as I learn data analytics. Stack Overflow and numerous blogs have come to my aid as I have been learning R and Python over the last several months, so I hope I can use this blog to share some of the things I&rsquo;ve learned as well.">
+    <meta name="description" content="For starters, I&rsquo;m happy to say that I fixed the website build error I had mentioned in my first blog post. After plenty of head scratching, rereading the tutorial, and staring at my config.toml file, I finally realized I had misread the instructions and ended up with a tiny typo in my publishDir file path, which prevented the documents from being copied to their new folder as expected. *facepalm*. I&rsquo;m not sure how I managed to miss it the first time, but I&rsquo;m glad to have it fixed now.">
+    <meta property="og:description" content="For starters, I&rsquo;m happy to say that I fixed the website build error I had mentioned in my first blog post. After plenty of head scratching, rereading the tutorial, and staring at my config.toml file, I finally realized I had misread the instructions and ended up with a tiny typo in my publishDir file path, which prevented the documents from being copied to their new folder as expected. *facepalm*. I&rsquo;m not sure how I managed to miss it the first time, but I&rsquo;m glad to have it fixed now.">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="First Blog Post">
-    <meta property="og:url" content="/2017/04/first-blog-post/">
+    <meta property="og:title" content="Creating a Reproducible Workflow in R">
+    <meta property="og:url" content="/2017/04/creating-a-reproducible-workflow-in-r/">
     <meta property="og:site_name" content="Joseph Carl">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Joseph Carl">
-    <meta name="twitter:description" content="I finally took the plunge and am attempting blogging. Specifically, as this site is directly connected to my Github, it seems like a great place to showcase some of my projects and write about my experiences as I learn data analytics. Stack Overflow and numerous blogs have come to my aid as I have been learning R and Python over the last several months, so I hope I can use this blog to share some of the things I&rsquo;ve learned as well.">
+    <meta name="twitter:description" content="For starters, I&rsquo;m happy to say that I fixed the website build error I had mentioned in my first blog post. After plenty of head scratching, rereading the tutorial, and staring at my config.toml file, I finally realized I had misread the instructions and ended up with a tiny typo in my publishDir file path, which prevented the documents from being copied to their new folder as expected. *facepalm*. I&rsquo;m not sure how I managed to miss it the first time, but I&rsquo;m glad to have it fixed now.">
     
     
 
@@ -208,14 +208,14 @@
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      First Blog Post
+      Creating a Reproducible Workflow in R
     </h1>
   
   <div class="postShorten-meta post-meta">
   
-    <time itemprop="datePublished" datetime="2017-04-09T00:00:00Z">
+    <time itemprop="datePublished" datetime="2017-04-21T00:00:00Z">
       
-  April 9, 2017
+  April 21, 2017
 
     </time>
   
@@ -235,15 +235,65 @@
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <p>I finally took the plunge and am attempting blogging. Specifically, as this site is directly connected to my Github, it seems like a great place to showcase some of my projects and write about my experiences as I learn data analytics. Stack Overflow and numerous blogs have come to my aid as I have been learning R and Python over the last several months, so I hope I can use this blog to share some of the things I&rsquo;ve learned as well. Plus, I have never built a website before, so this is also a great learning opportunity. I may also write about some topics not directly related to data analytics as time goes on. We&rsquo;ll see how it goes!</p>
+              
 
-<p>This site was created with the <code>blogdown</code> R package, RStudio, <code>Hugo</code>, and <a href="https://tclavelle.github.io/blog/blogdown_github/">this</a> helpful how-to guide. I am using the two-repository method described in the post. Unfortunately, I could not get my computer to recognize the <code>josephcarl.github.io</code> folder via the <code>publishDir</code> option in the <code>config.toml</code> file, as described in the tutorial. I had to manually copy my files to that folder as a workaround, then commit the <code>josephcarl.github.io</code> folder to its repo. Thankfully that doesn&rsquo;t take too much work, but I&rsquo;m hoping to find a better workaround soon. It&rsquo;s going to be a work in progress, but I&rsquo;m excited to get started!</p>
+<p>For starters, I&rsquo;m happy to say that I fixed the website build error I had mentioned in my first blog post. After plenty of head scratching, rereading the tutorial, and staring at my <code>config.toml</code> file, I finally realized I had misread the instructions and ended up with a tiny typo in my <code>publishDir</code> file path, which prevented the documents from being copied to their new folder as expected. *facepalm*. I&rsquo;m not sure how I managed to miss it the first time, but I&rsquo;m glad to have it fixed now.</p>
+
+<hr />
+
+<p>Having just started learning R last fall, it&rsquo;s awesome to see how much I&rsquo;ve learned in a short time. Though I was skeptical of R at first and nervous about its steep learning curve, I got past those reservations quickly, and some of my initial frustrations with learning it now seem trivial. I specifically remember being frustrated about sharing my code within an analysis document. I tried copying and pasting my R code into a Word document (sacrilege, I now know), and was frustrated that it did not preserve the code formatting. <em>But SAS does that!</em>, I remember thinking. Thankfully, RStudio has made an easy fix to this problem with RMarkdown documents, plus a variety of other tools to make data analysis easy from start to finish.</p>
+
+<p>Through learning RMarkdown, I became interested in the idea of reproducible research. In my undergrad program in Applied Economics, the importance of replicability was often stressed, particularly after the Reinhart-Rogoff debacle with their Excel spreadsheet came to light. However, my limited quantitative work with replicability mostly centered around saving my SAS scripts and writing a &lsquo;codebook&rsquo; in Word to document the changes I was making and steps of my analysis. This is not a bad setup, but certainly not very efficient or easily reproducible. Now that I&rsquo;m comfortable with RStudio, I have embraced the tools they&rsquo;ve provided to make an integrated, reproducible workflow all within RStudio, from data intake to report writing.</p>
+
+<p>There are plenty of books and tutorials for the various tools RStudio provides, including RMarkdown, LaTeX integration, and git/Github. I really enjoyed the book <a href="https://www.amazon.com/Reproducible-Research-Studio-Second-Chapman/dp/1498715370/ref=dp_ob_title_bk">Reproducible Research in R and RStudio</a> by Christopher Gandrud for a complete walkthrough of a reproducible workflow.</p>
+
+<p>Rather than reinvent that wheel, I&rsquo;d just like to share a few key things that I&rsquo;ve learned for a generally reproducible workflow in RStudio and a couple great references for those ideas. These can change somewhat depending on your specific needs and project size, but they work well for me!</p>
+
+<h2 id="embrace-the-project-structure">Embrace the Project Structure</h2>
+
+<p>Among my first noob mistakes when I began learning R was to put all my R scripts in one folder, all my datasets in another folder, and my written reports in another folder, even from different projects. As you can imagine, this quickly became a confused mess, and it was very difficult to find the files I needed. Thankfully, I quickly caught on to RStudio&rsquo;s idea of &lsquo;Projects&rsquo;, so I could keep things organized on a project-by-project basis, whether that&rsquo;s a small class assignment or a large collaborative term project.</p>
+
+<h2 id="incorporate-git-github">Incorporate Git/Github</h2>
+
+<p>Though understanding git&rsquo;s system of version control seems overwhelming and complicated at first, the fact that most of its functionality exists within a few commands (<code>pull</code>, <code>add</code>, <code>commit</code>, and <code>push</code>, namely) definitely helps! Even for small projects where version control may seem unnecessary, using git and hosting your project on Github or another online repo makes it really easy to keep a backup copy for later. Plus, it&rsquo;s an easy way to share your ongoing projects, like this website! RStudio has integrated git and Github functionality, so you can do your push, pull, and commits all from within RStudio. Though some tasks with the command line still make sense, if you&rsquo;re just doing a simple commit and push, you can do that within RStudio with just a couple clicks! I&rsquo;ve found it&rsquo;s easiest to set up the Github repo at the beginning of a project, though it is possible to sync an existing project to Github and add git version control after it&rsquo;s begun.</p>
+
+<p>For more information on incorporating git into RStudio, I&rsquo;d recommend checking out <a href="http://happygitwithr.com/">Happy Git and GitHub for the useR</a> by Jenny Bryan.</p>
+
+<h2 id="divide-and-conquer">Divide and Conquer</h2>
+
+<p>Even if you&rsquo;re the only person working on a project, documenting your steps can make it easier for someone to see what you did, or even just to remind a future you looking back on it. Though I first began using R by throwing everything from reading in the data to outputting analysis and visuals into a single R script, I&rsquo;ve found it can be hard to follow comments littered throughout the code.</p>
+
+<p>One thing that&rsquo;s helped is to reduce the size of this &ldquo;master script&rdquo; by moving my data cleaning into a separate script, with a name like <code>data-preparation.R</code>. This is particularly useful if you have a lot of data cleaning, reshaping, or merging datasets in your analysis. Rather than making your computer re-run the dataset creation each time you run your analysis, use a dataset preparation script to save your data as a csv or similar data file, then run your analysis on that. Similarly, if you have created any verbose functions, consider moving them to a separate script that you can source in your analysis, plus then it will already be saved in its own script for any future analyses.</p>
+
+<p>Separate from the master script, I use R Notebooks or an RMarkdown document for communicating my results. That way, the document has all the code necessary to recreate my analysis embedded in it, without adding the extra code from the script that I may want to save, but isn&rsquo;t directly useful or necessary in my report.</p>
+
+<p>Additionally, now that RStudio has released its R Notebooks as of a few months ago, I now sometimes use a &lsquo;master notebook&rsquo; instead of a master script. Similar to Jupyter Notebooks, they offer iterative computing for experimenting with code chunks, written comments for discussing your analysis, and include output and visualizations right below each code chunk. It&rsquo;s got all the benefits of writing a report with RMarkdown, but faster because you don&rsquo;t have to re-knit your document to see how your output changes. R Notebooks can also easily be compiled into HTML, PDF, or Word documents to share your work. If you want to know more about R Notebooks, RStudio has <a href="http://rmarkdown.rstudio.com/r_notebooks.html">a great introduction</a>.</p>
+
+<hr />
+
+<p>Those are some of my main ways of creating a reproducible workflow in RStudio. Of these ideas, using R Notebooks and RMarkdown documents to keep my code and analysis together have been the most useful for me. I&rsquo;m sure my process will change and improve over time and as RStudio rolls out new features, but this general structure has worked well for me so far. The exact structure of a reproducible workflow will depend on the complexity of task at hand, and you may not be able to share everything on Github if you&rsquo;re dealing with confidential information, but creating a reproducible workflow will help others understand your methods and help yourself in the future when looking back on your previous work!</p>
 
               
             </div>
           </div>
           <div id="post-footer" class="post-footer main-content-wrap">
             
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://josephcarl.github.io//tags/r/">R</a>
+
+  <a class="tag tag--primary tag--small" href="https://josephcarl.github.io//tags/rstudio/">RStudio</a>
+
+  <a class="tag tag--primary tag--small" href="https://josephcarl.github.io//tags/git/">git</a>
+
+  <a class="tag tag--primary tag--small" href="https://josephcarl.github.io//tags/github/">Github</a>
+
+                  </div>
+                
               
             
             <div class="post-actions-wrap">
@@ -252,7 +302,7 @@
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://josephcarl.github.io/2017/04/creating-a-reproducible-workflow-in-r/" data-tooltip="Creating a Reproducible Workflow in R">
+            <a class="post-action-btn btn btn--disabled">
           
             <i class="fa fa-angle-left"></i>
             <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -260,7 +310,7 @@
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--disabled">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://josephcarl.github.io/2017/04/first-blog-post/" data-tooltip="First Blog Post">
           
             <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
             <i class="fa fa-angle-right"></i>
@@ -277,17 +327,17 @@
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fjosephcarl.github.io%2f2017%2f04%2ffirst-blog-post%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fjosephcarl.github.io%2f2017%2f04%2fcreating-a-reproducible-workflow-in-r%2f">
           <i class="fa fa-google-plus"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fjosephcarl.github.io%2f2017%2f04%2ffirst-blog-post%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fjosephcarl.github.io%2f2017%2f04%2fcreating-a-reproducible-workflow-in-r%2f">
           <i class="fa fa-facebook-official"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fjosephcarl.github.io%2f2017%2f04%2ffirst-blog-post%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fjosephcarl.github.io%2f2017%2f04%2fcreating-a-reproducible-workflow-in-r%2f">
           <i class="fa fa-twitter"></i>
         </a>
       </li>
@@ -333,7 +383,7 @@
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://josephcarl.github.io/2017/04/creating-a-reproducible-workflow-in-r/" data-tooltip="Creating a Reproducible Workflow in R">
+            <a class="post-action-btn btn btn--disabled">
           
             <i class="fa fa-angle-left"></i>
             <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -341,7 +391,7 @@
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--disabled">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://josephcarl.github.io/2017/04/first-blog-post/" data-tooltip="First Blog Post">
           
             <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
             <i class="fa fa-angle-right"></i>
@@ -358,17 +408,17 @@
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fjosephcarl.github.io%2f2017%2f04%2ffirst-blog-post%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fjosephcarl.github.io%2f2017%2f04%2fcreating-a-reproducible-workflow-in-r%2f">
           <i class="fa fa-google-plus"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fjosephcarl.github.io%2f2017%2f04%2ffirst-blog-post%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fjosephcarl.github.io%2f2017%2f04%2fcreating-a-reproducible-workflow-in-r%2f">
           <i class="fa fa-facebook-official"></i>
         </a>
       </li>
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fjosephcarl.github.io%2f2017%2f04%2ffirst-blog-post%2f">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fjosephcarl.github.io%2f2017%2f04%2fcreating-a-reproducible-workflow-in-r%2f">
           <i class="fa fa-twitter"></i>
         </a>
       </li>
@@ -395,17 +445,17 @@
       <div id="share-options-bar" class="share-options-bar" data-behavior="4">
   <ul class="share-options">
     <li class="share-option">
-      <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fjosephcarl.github.io%2f2017%2f04%2ffirst-blog-post%2f">
+      <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3a%2f%2fjosephcarl.github.io%2f2017%2f04%2fcreating-a-reproducible-workflow-in-r%2f">
         <i class="fa fa-google-plus"></i><span>Share on Google Plus</span>
       </a>
     </li>
     <li class="share-option">
-      <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fjosephcarl.github.io%2f2017%2f04%2ffirst-blog-post%2f">
+      <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fjosephcarl.github.io%2f2017%2f04%2fcreating-a-reproducible-workflow-in-r%2f">
         <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
       </a>
     </li>
     <li class="share-option">
-      <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fjosephcarl.github.io%2f2017%2f04%2ffirst-blog-post%2f">
+      <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fjosephcarl.github.io%2f2017%2f04%2fcreating-a-reproducible-workflow-in-r%2f">
         <i class="fa fa-twitter"></i><span>Share on Twitter</span>
       </a>
     </li>
@@ -564,9 +614,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/josephcarl.github.io\/2017\/04\/first-blog-post\/';
+          this.page.url = 'https:\/\/josephcarl.github.io\/2017\/04\/creating-a-reproducible-workflow-in-r\/';
           
-            this.page.identifier = '\/2017\/04\/first-blog-post\/'
+            this.page.identifier = '\/2017\/04\/creating-a-reproducible-workflow-in-r\/'
           
         };
         (function() {
