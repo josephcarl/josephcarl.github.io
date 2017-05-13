@@ -9,6 +9,20 @@
     <atom:link href="https://josephcarl.github.io/tags/r/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Gearing Up for the Cascadia R Conference</title>
+      <link>https://josephcarl.github.io/2017/05/gearing-up-for-the-cascadia-r-conference/</link>
+      <pubDate>Fri, 12 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://josephcarl.github.io/2017/05/gearing-up-for-the-cascadia-r-conference/</guid>
+      <description>&lt;p&gt;The first ever &lt;a href=&#34;https://cascadiarconf.com/&#34;&gt;Cascadia R Conference&lt;/a&gt; is less than a month away in Portland, OR, and I am excited to be attending! On top of that, I am thrilled to say my lightning talk proposal, &amp;ldquo;Building a Personal Website with Blogdown and Github Pages&amp;rdquo; has been accepted. I&amp;rsquo;ll be talking about how I built this very website in RStudio using the blogdown package. As the blogdown package is quite new, people using other static site generators like Jekyll may not know much about it. Though it&amp;rsquo;s a short talk, so it will be fairly high-level, I hope to share some of the main things I&amp;rsquo;ve learned in the process of building this site.&lt;/p&gt;
+
+&lt;p&gt;Plus, it will be great to meet other R users from across the Pacific Northwest and learn how they are using R in their own professions to solve problems. I&amp;rsquo;m particularly looking forward to Charlotte Wickham&amp;rsquo;s &lt;code&gt;purrr&lt;/code&gt; and functional programming workshop. I have used the &lt;code&gt;map&lt;/code&gt; functions from &lt;code&gt;purrr&lt;/code&gt; a little bit in my own R programming and took Charlotte&amp;rsquo;s Datacamp course on functional programming, but haven&amp;rsquo;t done anything &amp;lsquo;crazy&amp;rsquo; with them. This should be a great workshop to learn a little bit more about ways I can incorporate &lt;code&gt;purrr&lt;/code&gt; and functional programming into my workflow.&lt;/p&gt;
+
+&lt;p&gt;After the conference, I will be sure to post an update of it here and discuss the main things I learned, along with the slides I create for the lightning talk. Until then, my main focus is on getting through spring quarter finals.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Creating a Reproducible Workflow in R</title>
       <link>https://josephcarl.github.io/2017/04/creating-a-reproducible-workflow-in-r/</link>
       <pubDate>Fri, 21 Apr 2017 00:00:00 +0000</pubDate>
