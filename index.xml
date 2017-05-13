@@ -85,6 +85,32 @@
 
 &lt;p&gt;Github: &lt;a href=&#34;https://github.com/josephcarl&#34;&gt;josephcarl&lt;/a&gt;&lt;/p&gt;
 
+&lt;p&gt;LinkedIn: &lt;a href=&#34;https://www.linkedin.com/in/joseph-carl/&#34;&gt;Joseph Carl&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;about-me&#34;&gt;About Me&lt;/h2&gt;
+
+&lt;p&gt;I&amp;rsquo;m a Master&amp;rsquo;s student in Business Analytics at Seattle University, graduating this August. I first became interested in analytics while studying applied economics at the University of Minnesota, and knew I wanted to pursue graduate education to improve my analytical skills. Seattle University&amp;rsquo;s program turned out to be just what I was looking for!&lt;/p&gt;
+
+&lt;p&gt;Some of my key skills include data visualization and statistical analysis using tools like R, Python, SQL, and PowerBI. Some of my interests for analytics include using data to understand energy, environmental, and urban issues like housing and transportation, though I&amp;rsquo;m interested in any analytics career opportunity that can allow me to learn and continue to develop my skill set.&lt;/p&gt;
+
+&lt;p&gt;Please feel free to check out this website and my &lt;a href=&#34;https://github.com/josephcarl&#34;&gt;Github page&lt;/a&gt; to see some of the projects I&amp;rsquo;m working on. I am looking for data analytics opportunities in the Seattle area, so if you know of any, please feel free to email me or contact me via LinkedIn.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;skills&#34;&gt;Skills&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Data Analysis/Visualization Tools: R/RStudio (including ggplot2), Python, Power BI, SAS, SQL, git/Github&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Quantitative analysis: Regression, forecasting, linear programming, and cost-benefit analysis&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Microsoft Office: Excel (including regression, Pivot Tables, and vlookup), Word, and PowerPoint&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Foreign Language: Proficient in speaking, reading, and writing Mandarin Chinese&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;hr /&gt;
 
 &lt;h2 id=&#34;education&#34;&gt;Education&lt;/h2&gt;
@@ -99,20 +125,6 @@
 
 &lt;ul&gt;
 &lt;li&gt;Econometrics Project: Built Logistic Regression Model to Predict Job Satisfaction using SAS&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;skills&#34;&gt;Skills&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Data Analysis/Visualization Tools: R/RStudio (including ggplot2), Python, Power BI, SAS, SQL, git/Github&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Quantitative analysis: Regression, forecasting, linear programming, and cost-benefit analysis&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Microsoft Office: Excel (including regression, Pivot Tables, and vlookup), Word, and PowerPoint&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Foreign Language: Proficient in speaking, reading, and writing Mandarin Chinese&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;hr /&gt;
@@ -330,13 +342,30 @@ $(document).ready(function () {
 &lt;/div&gt;
 
 
-&lt;p&gt;+++ showTags = false showSocial = false showDate = false comments = false keywords = [“tech”] # tags = [“tag1”,“tag2”] title = “Resume” date = “2017-04-10T22:34:02-07:00” showPagination = false # categories = [“category”,“subcategory”]&lt;/p&gt;
-&lt;p&gt;+++&lt;/p&gt;
+&lt;p&gt;+++ showTags = false showSocial = false showDate = false comments = false keywords = [“tech”] # tags = [“tag1”,“tag2”] title = “Resume” date = “2017-04-10T22:34:02-07:00” showPagination = false # categories = [“category”,“subcategory”] +++&lt;/p&gt;
 &lt;hr /&gt;
 &lt;div id=&#34;joseph-carl&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Joseph Carl&lt;/h2&gt;
 &lt;p&gt;Email: &lt;a href=&#34;mailto:josephcarl7@gmail.com&#34;&gt;josephcarl7@gmail.com&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Github: &lt;a href=&#34;https://github.com/josephcarl&#34;&gt;josephcarl&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;LinkedIn: &lt;a href=&#34;https://www.linkedin.com/in/joseph-carl/&#34;&gt;Joseph Carl&lt;/a&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;about-me&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;About Me&lt;/h2&gt;
+&lt;p&gt;I’m a Master’s student in Business Analytics at Seattle University, graduating this August. I first became interested in analytics while studying applied economics at the University of Minnesota, and knew I wanted to pursue graduate education to improve my analytical skills. Seattle University’s program turned out to be just what I was looking for!&lt;/p&gt;
+&lt;p&gt;Some of my key skills include data visualization and statistical analysis using tools like R, Python, SQL, and PowerBI. Some of my interests for analytics include using data to understand energy, environmental, and urban issues like housing and transportation, though I’m interested in any analytics career opportunity that can allow me to learn and continue to develop my skill set.&lt;/p&gt;
+&lt;p&gt;Please feel free to check out this website and my &lt;a href=&#34;https://github.com/josephcarl&#34;&gt;Github page&lt;/a&gt; to see some of the projects I’m working on. I am looking for data analytics opportunities in the Seattle area, so if you know of any, please feel free to email me or contact me via LinkedIn.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;skills&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Skills&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Data Analysis/Visualization Tools: R/RStudio (including ggplot2), Python, Power BI, SAS, SQL, git/Github&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Quantitative analysis: Regression, forecasting, linear programming, and cost-benefit analysis&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Microsoft Office: Excel (including regression, Pivot Tables, and vlookup), Word, and PowerPoint&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Foreign Language: Proficient in speaking, reading, and writing Mandarin Chinese&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;hr /&gt;
 &lt;/div&gt;
 &lt;div id=&#34;education&#34; class=&#34;section level2&#34;&gt;
@@ -348,16 +377,6 @@ $(document).ready(function () {
 &lt;p&gt;&lt;strong&gt;Bachelor of Science in Applied Economics&lt;/strong&gt; | May 2015 | University of Minnesota - Twin Cities&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Econometrics Project: Built Logistic Regression Model to Predict Job Satisfaction using SAS&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr /&gt;
-&lt;/div&gt;
-&lt;div id=&#34;skills&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Skills&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Data Analysis/Visualization Tools: R/RStudio (including ggplot2), Python, Power BI, SAS, SQL, git/Github&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Quantitative analysis: Regression, forecasting, linear programming, and cost-benefit analysis&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Microsoft Office: Excel (including regression, Pivot Tables, and vlookup), Word, and PowerPoint&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Foreign Language: Proficient in speaking, reading, and writing Mandarin Chinese&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr /&gt;
 &lt;/div&gt;
