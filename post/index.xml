@@ -6,8 +6,34 @@
     <description>Recent content in Posts on Joseph Carl</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 12 May 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 18 Jun 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://josephcarl.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>My Experience at the Cascadia R Conference</title>
+      <link>https://josephcarl.github.io/2017/06/my-experience-at-the-cascadia-r-conference/</link>
+      <pubDate>Sun, 18 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://josephcarl.github.io/2017/06/my-experience-at-the-cascadia-r-conference/</guid>
+      <description>&lt;p&gt;The past few weeks have been crazy with finishing final projects and taking final exams for spring quarter. This past week I also took a much-needed break between quarters for a road trip to the Canadian Rockies! I enjoyed recharging with some great hiking around Banff and Kootenay National Parks and checking out the natural hot springs at Radium Hot Springs. Plus, because Canada is celebrating its 150th birthday this year, admission to the parks was free!&lt;/p&gt;
+
+&lt;p&gt;Here&amp;rsquo;s one of my favorite photos of the trip, taken at Stanley Glacier in Kootenay National Park, BC:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://josephcarl.github.io/img/stanley_glacier.jpeg&#34; alt=&#34;Stanley Glacier in Kootenay National Park&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;With all that going on, I haven&amp;rsquo;t had a chance to write about the &lt;a href=&#34;https://cascadiarconf.com/&#34;&gt;Cascadia R Conference&lt;/a&gt;, which happened for the first time on June 3 in Portland, OR.&lt;/p&gt;
+
+&lt;p&gt;Overall, the conference was very well done, particularly considering it was organized in just a few months. Almost 200 people attended the conference. As a student, I appreciated that it took place on a Saturday, so I did not have to worry about missing class, and that student tickets were only $5, which made the decision to attend really easy. The Collaborative Life Sciences building at OHSU was a great space to have the conference, both in terms of its central location as well as its facilities.&lt;/p&gt;
+
+&lt;p&gt;My favorite part of the conference was the &lt;code&gt;purrr&lt;/code&gt; workshop put on by Charlotte Wickham. She is great at explaining concepts, plus made the workshop interactive with lots of opportunities to learn by doing. The workshop mostly focused on using the &lt;code&gt;map()&lt;/code&gt; function and its related functions (&lt;code&gt;map_int()&lt;/code&gt;, &lt;code&gt;map_lgl()&lt;/code&gt;, &lt;code&gt;map_dbl()&lt;/code&gt;, etc.) to iterate over objects. It also introduced &lt;code&gt;map_2()&lt;/code&gt; and &lt;code&gt;walk()&lt;/code&gt; for iterating over multiple arguments and using functions for their side-effects like saving or displaying graphs. I will definitely be using these functions more in the future!&lt;/p&gt;
+
+&lt;p&gt;The full-length and lightning talks were also quite interesting. It seemed that most of the talks (at least the ones I attended) were either academic or health research-focused. While it was interesting to see how R is used in these areas, some talks were harder to follow simply because I did not have the domain knowledge needed to understand the topic. There were few industry-focused speakers. Based on the people I met, it seemed like a decent amount attending the conference were working for businesses as data analysts or data scientists, but few presentations had a business focus for applications of R. Perhaps this just means the people working in industry did not submit as many talk proposals as the people working in academia or health research. Hopefully next year, I can submit a talk proposal about my own work in whatever job I have and change that trend! Either way, it was still exciting to see the wide variety in which people use R in their respective fields.&lt;/p&gt;
+
+&lt;p&gt;As for my own lightning talk about building this website with the &lt;code&gt;blogdown&lt;/code&gt; package and Github Pages, it also went really well. It was exciting to share what I have learned about building this site, plus made for great public speaking practice. A few people even told me at the end of the day they are now interested in building their own personal websites using R! If you would like to see the slides for my presentation, you can view them &lt;a href=&#34;https://josephcarl.github/io/slides/JoeCarl-CascadiaRConf-Slides&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Tomorrow is the first day of summer quarter, which is the final quarter of my master&amp;rsquo;s program. I&amp;rsquo;ll be doing my capstone project as well as one other course. It&amp;rsquo;s hard to believe I&amp;rsquo;m only 8 weeks from being done with the program. I can&amp;rsquo;t wait to get started!&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Gearing Up for the Cascadia R Conference</title>
