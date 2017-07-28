@@ -1,0 +1,3455 @@
+
+
+  
+    
+  
+
+
+  
+
+
+
+
+
+  
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.19">
+    <title>Craft Beers</title>
+    <meta name="author" content="Joseph Carl">
+    <meta name="keywords" content="">
+
+    <link rel="icon" href="/favicon.png">
+    
+
+    
+    <meta name="description" content="# set wd import os os.chdir(&quot;/Users/josephscarl/Documents/Notebooks/Craft_Beers&quot;) # Read in dataset import pandas as pd beers = pd.read_csv(&quot;beers.csv&quot;, header=0) # Data source: https://www.kaggle.com/nickhould/craft-cans # Preview the data beers.head() # index got read in weird, so we&#39;ll delete column &#39;Unnamed: 0&#39;     Unnamed: 0 abv ibu id name style brewery_id ounces     0 0 0.050 NaN 1436 Pub Beer American Pale Lager 408 12.0   1 1 0.">
+    <meta property="og:description" content="# set wd import os os.chdir(&quot;/Users/josephscarl/Documents/Notebooks/Craft_Beers&quot;) # Read in dataset import pandas as pd beers = pd.read_csv(&quot;beers.csv&quot;, header=0) # Data source: https://www.kaggle.com/nickhould/craft-cans # Preview the data beers.head() # index got read in weird, so we&#39;ll delete column &#39;Unnamed: 0&#39;     Unnamed: 0 abv ibu id name style brewery_id ounces     0 0 0.050 NaN 1436 Pub Beer American Pale Lager 408 12.0   1 1 0.">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Craft Beers">
+    <meta property="og:url" content="/2017/06/craft-beers/">
+    <meta property="og:site_name" content="Joseph Carl">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Joseph Carl">
+    <meta name="twitter:description" content="# set wd import os os.chdir(&quot;/Users/josephscarl/Documents/Notebooks/Craft_Beers&quot;) # Read in dataset import pandas as pd beers = pd.read_csv(&quot;beers.csv&quot;, header=0) # Data source: https://www.kaggle.com/nickhould/craft-cans # Preview the data beers.head() # index got read in weird, so we&#39;ll delete column &#39;Unnamed: 0&#39;     Unnamed: 0 abv ibu id name style brewery_id ounces     0 0 0.050 NaN 1436 Pub Beer American Pale Lager 408 12.0   1 1 0.">
+    
+    
+
+    
+    
+
+    
+      <meta property="og:image" content="https://avatars0.githubusercontent.com/u/23249449?v=3&u=2245b834f214a44270c8ce6800dfa6a36f38b577&s=400">
+    
+
+    
+    
+      <meta property="og:image" content="/">
+    
+    
+
+    
+
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" />
+    
+    
+    <link rel="stylesheet" href="/css/style-gwlo24d2hxipxk8bi1sxik0zhlpn9t7ebcmgp9kubmmcjfzlavuyhvbqumhn.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="/">Joseph Carl</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://avatars0.githubusercontent.com/u/23249449?v=3&amp;u=2245b834f214a44270c8ce6800dfa6a36f38b577&amp;s=400" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="/#about">
+          <img class="sidebar-profile-picture" src="https://avatars0.githubusercontent.com/u/23249449?v=3&amp;u=2245b834f214a44270c8ce6800dfa6a36f38b577&amp;s=400" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Joseph Carl</h4>
+        
+          <h5 class="sidebar-profile-bio">Biker, Hiker, Pianist, and Aspiring Data Analyst</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/page/resume">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-suitcase"></i>
+      
+      <span class="sidebar-button-desc">Resume</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://www.linkedin.com/in/joseph-carl/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-linkedin"></i>
+      
+      <span class="sidebar-button-desc">LinkedIn</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/josephcarl">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+    </ul>
+  </div>
+</nav>
+
+      
+  <div class="post-header-cover
+              text-left
+              "
+       style="background-image:url('/')"
+       data-behavior="4">
+    
+      <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      Craft Beers
+    </h1>
+  
+  <div class="postShorten-meta post-meta">
+  
+    <time itemprop="datePublished" datetime="2017-06-19T00:00:00Z">
+      
+  June 19, 2017
+
+    </time>
+  
+  
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="/categories/r">R</a>
+    
+  
+
+
+</div>
+
+</div>
+    
+  </div>
+
+
+      <div id="main" data-behavior="4"
+        class="hasCover
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <pre><code class="language-python"># set wd
+import os
+os.chdir(&quot;/Users/josephscarl/Documents/Notebooks/Craft_Beers&quot;)
+
+# Read in dataset
+import pandas as pd
+beers = pd.read_csv(&quot;beers.csv&quot;, header=0)
+# Data source: https://www.kaggle.com/nickhould/craft-cans
+
+# Preview the data
+beers.head()
+
+# index got read in weird, so we'll delete column 'Unnamed: 0'
+</code></pre>
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>abv</th>
+      <th>ibu</th>
+      <th>id</th>
+      <th>name</th>
+      <th>style</th>
+      <th>brewery_id</th>
+      <th>ounces</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>0.050</td>
+      <td>NaN</td>
+      <td>1436</td>
+      <td>Pub Beer</td>
+      <td>American Pale Lager</td>
+      <td>408</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>0.066</td>
+      <td>NaN</td>
+      <td>2265</td>
+      <td>Devil's Cup</td>
+      <td>American Pale Ale (APA)</td>
+      <td>177</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>0.071</td>
+      <td>NaN</td>
+      <td>2264</td>
+      <td>Rise of the Phoenix</td>
+      <td>American IPA</td>
+      <td>177</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>0.090</td>
+      <td>NaN</td>
+      <td>2263</td>
+      <td>Sinister</td>
+      <td>American Double / Imperial IPA</td>
+      <td>177</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>0.075</td>
+      <td>NaN</td>
+      <td>2262</td>
+      <td>Sex and Candy</td>
+      <td>American IPA</td>
+      <td>177</td>
+      <td>12.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<pre><code class="language-python"># delete column 'Unnamed: 0'
+del beers['Unnamed: 0']
+</code></pre>
+
+<pre><code class="language-python"># check again
+beers.head()
+</code></pre>
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>abv</th>
+      <th>ibu</th>
+      <th>id</th>
+      <th>name</th>
+      <th>style</th>
+      <th>brewery_id</th>
+      <th>ounces</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.050</td>
+      <td>NaN</td>
+      <td>1436</td>
+      <td>Pub Beer</td>
+      <td>American Pale Lager</td>
+      <td>408</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.066</td>
+      <td>NaN</td>
+      <td>2265</td>
+      <td>Devil's Cup</td>
+      <td>American Pale Ale (APA)</td>
+      <td>177</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.071</td>
+      <td>NaN</td>
+      <td>2264</td>
+      <td>Rise of the Phoenix</td>
+      <td>American IPA</td>
+      <td>177</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.090</td>
+      <td>NaN</td>
+      <td>2263</td>
+      <td>Sinister</td>
+      <td>American Double / Imperial IPA</td>
+      <td>177</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.075</td>
+      <td>NaN</td>
+      <td>2262</td>
+      <td>Sex and Candy</td>
+      <td>American IPA</td>
+      <td>177</td>
+      <td>12.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<pre><code class="language-python"># Get basic summary statistics on the dataset
+
+beers.describe()
+</code></pre>
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>abv</th>
+      <th>ibu</th>
+      <th>id</th>
+      <th>brewery_id</th>
+      <th>ounces</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>2348.000000</td>
+      <td>1405.000000</td>
+      <td>2410.000000</td>
+      <td>2410.000000</td>
+      <td>2410.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>0.059773</td>
+      <td>42.713167</td>
+      <td>1431.113278</td>
+      <td>231.749793</td>
+      <td>13.592241</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>0.013542</td>
+      <td>25.954066</td>
+      <td>752.459975</td>
+      <td>157.685604</td>
+      <td>2.352204</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>0.001000</td>
+      <td>4.000000</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>8.400000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>0.050000</td>
+      <td>21.000000</td>
+      <td>808.250000</td>
+      <td>93.000000</td>
+      <td>12.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>0.056000</td>
+      <td>35.000000</td>
+      <td>1453.500000</td>
+      <td>205.000000</td>
+      <td>12.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>0.067000</td>
+      <td>64.000000</td>
+      <td>2075.750000</td>
+      <td>366.000000</td>
+      <td>16.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>0.128000</td>
+      <td>138.000000</td>
+      <td>2692.000000</td>
+      <td>557.000000</td>
+      <td>32.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<pre><code class="language-python"># Read in the breweries dataset
+breweries = pd.read_csv('breweries.csv', header=0)
+# Data source: https://www.kaggle.com/nickhould/craft-cans
+
+breweries.head()
+
+# Same issue of the extra index column. However, this should actually be called brewery_id
+</code></pre>
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>name</th>
+      <th>city</th>
+      <th>state</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>NorthGate Brewing</td>
+      <td>Minneapolis</td>
+      <td>MN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>Against the Grain Brewery</td>
+      <td>Louisville</td>
+      <td>KY</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>Jack's Abby Craft Lagers</td>
+      <td>Framingham</td>
+      <td>MA</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>Mike Hess Brewing Company</td>
+      <td>San Diego</td>
+      <td>CA</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>Fort Point Beer Company</td>
+      <td>San Francisco</td>
+      <td>CA</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<pre><code class="language-python"># Rename column 'Unnamed: 0' as 'brewery_id'
+breweries=breweries.rename(columns = {'Unnamed: 0':'brewery_id'})
+</code></pre>
+
+<pre><code class="language-python"># check again
+breweries.head()
+
+# much better!
+</code></pre>
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>brewery_id</th>
+      <th>name</th>
+      <th>city</th>
+      <th>state</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>NorthGate Brewing</td>
+      <td>Minneapolis</td>
+      <td>MN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>Against the Grain Brewery</td>
+      <td>Louisville</td>
+      <td>KY</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>Jack's Abby Craft Lagers</td>
+      <td>Framingham</td>
+      <td>MA</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>Mike Hess Brewing Company</td>
+      <td>San Diego</td>
+      <td>CA</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>Fort Point Beer Company</td>
+      <td>San Francisco</td>
+      <td>CA</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<pre><code class="language-python"># with that in place, we can now merge the two datasets to get full information
+fulldat = beers.merge(breweries, left_on='brewery_id', right_on='brewery_id')
+
+fulldat.head()
+# Looks good!
+</code></pre>
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>abv</th>
+      <th>ibu</th>
+      <th>id</th>
+      <th>name_x</th>
+      <th>style</th>
+      <th>brewery_id</th>
+      <th>ounces</th>
+      <th>name_y</th>
+      <th>city</th>
+      <th>state</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.050</td>
+      <td>NaN</td>
+      <td>1436</td>
+      <td>Pub Beer</td>
+      <td>American Pale Lager</td>
+      <td>408</td>
+      <td>12.0</td>
+      <td>10 Barrel Brewing Company</td>
+      <td>Bend</td>
+      <td>OR</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.066</td>
+      <td>NaN</td>
+      <td>2265</td>
+      <td>Devil's Cup</td>
+      <td>American Pale Ale (APA)</td>
+      <td>177</td>
+      <td>12.0</td>
+      <td>18th Street Brewery</td>
+      <td>Gary</td>
+      <td>IN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.071</td>
+      <td>NaN</td>
+      <td>2264</td>
+      <td>Rise of the Phoenix</td>
+      <td>American IPA</td>
+      <td>177</td>
+      <td>12.0</td>
+      <td>18th Street Brewery</td>
+      <td>Gary</td>
+      <td>IN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.090</td>
+      <td>NaN</td>
+      <td>2263</td>
+      <td>Sinister</td>
+      <td>American Double / Imperial IPA</td>
+      <td>177</td>
+      <td>12.0</td>
+      <td>18th Street Brewery</td>
+      <td>Gary</td>
+      <td>IN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.075</td>
+      <td>NaN</td>
+      <td>2262</td>
+      <td>Sex and Candy</td>
+      <td>American IPA</td>
+      <td>177</td>
+      <td>12.0</td>
+      <td>18th Street Brewery</td>
+      <td>Gary</td>
+      <td>IN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<pre><code class="language-python"># But id, name_x, and name_y could be more meaningful
+fulldat=fulldat.rename(columns = {'id':'beer_id', 'name_x':'beer_name', 'name_y':'brewery_name'})
+
+fulldat.set_index(['beer_id'])
+
+fulldat.head()
+</code></pre>
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>abv</th>
+      <th>ibu</th>
+      <th>beer_id</th>
+      <th>beer_name</th>
+      <th>style</th>
+      <th>brewery_id</th>
+      <th>ounces</th>
+      <th>brewery_name</th>
+      <th>city</th>
+      <th>state</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.050</td>
+      <td>NaN</td>
+      <td>1436</td>
+      <td>Pub Beer</td>
+      <td>American Pale Lager</td>
+      <td>408</td>
+      <td>12.0</td>
+      <td>10 Barrel Brewing Company</td>
+      <td>Bend</td>
+      <td>OR</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.066</td>
+      <td>NaN</td>
+      <td>2265</td>
+      <td>Devil's Cup</td>
+      <td>American Pale Ale (APA)</td>
+      <td>177</td>
+      <td>12.0</td>
+      <td>18th Street Brewery</td>
+      <td>Gary</td>
+      <td>IN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.071</td>
+      <td>NaN</td>
+      <td>2264</td>
+      <td>Rise of the Phoenix</td>
+      <td>American IPA</td>
+      <td>177</td>
+      <td>12.0</td>
+      <td>18th Street Brewery</td>
+      <td>Gary</td>
+      <td>IN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.090</td>
+      <td>NaN</td>
+      <td>2263</td>
+      <td>Sinister</td>
+      <td>American Double / Imperial IPA</td>
+      <td>177</td>
+      <td>12.0</td>
+      <td>18th Street Brewery</td>
+      <td>Gary</td>
+      <td>IN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.075</td>
+      <td>NaN</td>
+      <td>2262</td>
+      <td>Sex and Candy</td>
+      <td>American IPA</td>
+      <td>177</td>
+      <td>12.0</td>
+      <td>18th Street Brewery</td>
+      <td>Gary</td>
+      <td>IN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<pre><code class="language-python"># What's the average abv and ibu by beer style?
+fulldat.groupby('style').describe()
+
+# Kind of hard to read
+</code></pre>
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>abv</th>
+      <th>beer_id</th>
+      <th>brewery_id</th>
+      <th>ibu</th>
+      <th>ounces</th>
+    </tr>
+    <tr>
+      <th>style</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="8" valign="top">Abbey Single Ale</th>
+      <th>count</th>
+      <td>2.000000</td>
+      <td>2.000000</td>
+      <td>2.000000</td>
+      <td>2.000000</td>
+      <td>2.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>0.049000</td>
+      <td>2196.000000</td>
+      <td>57.000000</td>
+      <td>22.000000</td>
+      <td>12.000000</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>0.000000</td>
+      <td>436.991991</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>0.049000</td>
+      <td>1887.000000</td>
+      <td>57.000000</td>
+      <td>22.000000</td>
+      <td>12.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>0.049000</td>
+      <td>2041.500000</td>
+      <td>57.000000</td>
+      <td>22.000000</td>
+      <td>12.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>0.049000</td>
+      <td>2196.000000</td>
+      <td>57.000000</td>
+      <td>22.000000</td>
+      <td>12.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>0.049000</td>
+      <td>2350.500000</td>
+      <td>57.000000</td>
+      <td>22.000000</td>
+      <td>12.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>0.049000</td>
+      <td>2505.000000</td>
+      <td>57.000000</td>
+      <td>22.000000</td>
+      <td>12.000000</td>
+    </tr>
+    <tr>
+      <th rowspan="8" valign="top">Altbier</th>
+      <th>count</th>
+      <td>13.000000</td>
+      <td>13.000000</td>
+      <td>13.000000</td>
+      <td>8.000000</td>
+      <td>13.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>0.054385</td>
+      <td>1480.923077</td>
+      <td>220.000000</td>
+      <td>34.125000</td>
+      <td>13.538462</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>0.006899</td>
+      <td>763.209611</td>
+      <td>137.471209</td>
+      <td>8.339878</td>
+      <td>2.025479</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>0.046000</td>
+      <td>502.000000</td>
+      <td>25.000000</td>
+      <td>18.000000</td>
+      <td>12.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>0.050000</td>
+      <td>936.000000</td>
+      <td>122.000000</td>
+      <td>29.750000</td>
+      <td>12.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>0.052000</td>
+      <td>1248.000000</td>
+      <td>200.000000</td>
+      <td>36.500000</td>
+      <td>12.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>0.055000</td>
+      <td>2339.000000</td>
+      <td>270.000000</td>
+      <td>40.000000</td>
+      <td>16.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>0.072000</td>
+      <td>2605.000000</td>
+      <td>490.000000</td>
+      <td>43.000000</td>
+      <td>16.000000</td>
+    </tr>
+    <tr>
+      <th rowspan="8" valign="top">American Adjunct Lager</th>
+      <th>count</th>
+      <td>18.000000</td>
+      <td>18.000000</td>
+      <td>18.000000</td>
+      <td>11.000000</td>
+      <td>18.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>0.048722</td>
+      <td>1714.055556</td>
+      <td>163.000000</td>
+      <td>11.000000</td>
+      <td>13.333333</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>0.004309</td>
+      <td>822.145005</td>
+      <td>89.903216</td>
+      <td>3.768289</td>
+      <td>3.067860</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>0.039000</td>
+      <td>97.000000</td>
+      <td>38.000000</td>
+      <td>8.000000</td>
+      <td>12.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>0.047000</td>
+      <td>1099.250000</td>
+      <td>131.000000</td>
+      <td>9.000000</td>
+      <td>12.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>0.048500</td>
+      <td>2167.000000</td>
+      <td>131.000000</td>
+      <td>9.000000</td>
+      <td>12.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>0.050750</td>
+      <td>2273.750000</td>
+      <td>149.750000</td>
+      <td>12.000000</td>
+      <td>12.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>0.055000</td>
+      <td>2369.000000</td>
+      <td>473.000000</td>
+      <td>19.000000</td>
+      <td>24.000000</td>
+    </tr>
+    <tr>
+      <th rowspan="6" valign="top">American Amber / Red Ale</th>
+      <th>count</th>
+      <td>125.000000</td>
+      <td>133.000000</td>
+      <td>133.000000</td>
+      <td>77.000000</td>
+      <td>133.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>0.057456</td>
+      <td>1272.398496</td>
+      <td>248.045113</td>
+      <td>36.298701</td>
+      <td>13.293233</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>0.008679</td>
+      <td>791.092129</td>
+      <td>158.265641</td>
+      <td>19.630176</td>
+      <td>1.878031</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>0.035000</td>
+      <td>28.000000</td>
+      <td>4.000000</td>
+      <td>15.000000</td>
+      <td>12.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>0.052000</td>
+      <td>677.000000</td>
+      <td>101.000000</td>
+      <td>24.000000</td>
+      <td>12.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>0.055000</td>
+      <td>1179.000000</td>
+      <td>219.000000</td>
+      <td>31.000000</td>
+      <td>12.000000</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th rowspan="6" valign="top">Vienna Lager</th>
+      <th>std</th>
+      <td>0.003441</td>
+      <td>528.958448</td>
+      <td>134.294991</td>
+      <td>5.555415</td>
+      <td>1.777047</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>0.046000</td>
+      <td>63.000000</td>
+      <td>51.000000</td>
+      <td>15.000000</td>
+      <td>12.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>0.048750</td>
+      <td>444.750000</td>
+      <td>192.000000</td>
+      <td>20.500000</td>
+      <td>12.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>0.050000</td>
+      <td>788.000000</td>
+      <td>300.000000</td>
+      <td>23.500000</td>
+      <td>12.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>0.052750</td>
+      <td>1223.750000</td>
+      <td>370.250000</td>
+      <td>29.500000</td>
+      <td>13.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>0.060000</td>
+      <td>2226.000000</td>
+      <td>498.000000</td>
+      <td>33.000000</td>
+      <td>16.000000</td>
+    </tr>
+    <tr>
+      <th rowspan="8" valign="top">Wheat Ale</th>
+      <th>count</th>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>0.060000</td>
+      <td>2666.000000</td>
+      <td>3.000000</td>
+      <td>24.000000</td>
+      <td>16.000000</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>0.060000</td>
+      <td>2666.000000</td>
+      <td>3.000000</td>
+      <td>24.000000</td>
+      <td>16.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>0.060000</td>
+      <td>2666.000000</td>
+      <td>3.000000</td>
+      <td>24.000000</td>
+      <td>16.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>0.060000</td>
+      <td>2666.000000</td>
+      <td>3.000000</td>
+      <td>24.000000</td>
+      <td>16.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>0.060000</td>
+      <td>2666.000000</td>
+      <td>3.000000</td>
+      <td>24.000000</td>
+      <td>16.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>0.060000</td>
+      <td>2666.000000</td>
+      <td>3.000000</td>
+      <td>24.000000</td>
+      <td>16.000000</td>
+    </tr>
+    <tr>
+      <th rowspan="8" valign="top">Winter Warmer</th>
+      <th>count</th>
+      <td>15.000000</td>
+      <td>15.000000</td>
+      <td>15.000000</td>
+      <td>8.000000</td>
+      <td>15.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>0.070400</td>
+      <td>1426.933333</td>
+      <td>221.733333</td>
+      <td>24.625000</td>
+      <td>13.066667</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>0.011587</td>
+      <td>610.812160</td>
+      <td>130.581374</td>
+      <td>13.835126</td>
+      <td>1.830951</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>0.055000</td>
+      <td>321.000000</td>
+      <td>30.000000</td>
+      <td>6.000000</td>
+      <td>12.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>0.063000</td>
+      <td>974.500000</td>
+      <td>115.500000</td>
+      <td>16.000000</td>
+      <td>12.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>0.069000</td>
+      <td>1588.000000</td>
+      <td>179.000000</td>
+      <td>22.000000</td>
+      <td>12.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>0.079000</td>
+      <td>1896.000000</td>
+      <td>362.000000</td>
+      <td>30.000000</td>
+      <td>14.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>0.095000</td>
+      <td>2255.000000</td>
+      <td>371.000000</td>
+      <td>45.000000</td>
+      <td>16.000000</td>
+    </tr>
+    <tr>
+      <th rowspan="8" valign="top">Witbier</th>
+      <th>count</th>
+      <td>49.000000</td>
+      <td>51.000000</td>
+      <td>51.000000</td>
+      <td>24.000000</td>
+      <td>51.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>0.053551</td>
+      <td>1331.137255</td>
+      <td>257.490196</td>
+      <td>16.208333</td>
+      <td>13.333333</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>0.011188</td>
+      <td>764.190579</td>
+      <td>164.659330</td>
+      <td>4.809223</td>
+      <td>1.904381</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>0.037000</td>
+      <td>108.000000</td>
+      <td>7.000000</td>
+      <td>10.000000</td>
+      <td>12.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>0.048000</td>
+      <td>656.000000</td>
+      <td>122.000000</td>
+      <td>12.750000</td>
+      <td>12.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>0.050000</td>
+      <td>1241.000000</td>
+      <td>284.000000</td>
+      <td>15.500000</td>
+      <td>12.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>0.056000</td>
+      <td>1990.000000</td>
+      <td>377.000000</td>
+      <td>20.000000</td>
+      <td>16.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>0.092000</td>
+      <td>2525.000000</td>
+      <td>535.000000</td>
+      <td>27.000000</td>
+      <td>16.000000</td>
+    </tr>
+  </tbody>
+</table>
+<p>792 rows × 5 columns</p>
+</div>
+
+<pre><code class="language-python">fulldat.groupby('style').mean()
+# A little less info, though there are 99 different styles of beers in the dataset. that's a lot to sort through!
+</code></pre>
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>abv</th>
+      <th>ibu</th>
+      <th>beer_id</th>
+      <th>brewery_id</th>
+      <th>ounces</th>
+    </tr>
+    <tr>
+      <th>style</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Abbey Single Ale</th>
+      <td>0.049000</td>
+      <td>22.000000</td>
+      <td>2196.000000</td>
+      <td>57.000000</td>
+      <td>12.000000</td>
+    </tr>
+    <tr>
+      <th>Altbier</th>
+      <td>0.054385</td>
+      <td>34.125000</td>
+      <td>1480.923077</td>
+      <td>220.000000</td>
+      <td>13.538462</td>
+    </tr>
+    <tr>
+      <th>American Adjunct Lager</th>
+      <td>0.048722</td>
+      <td>11.000000</td>
+      <td>1714.055556</td>
+      <td>163.000000</td>
+      <td>13.333333</td>
+    </tr>
+    <tr>
+      <th>American Amber / Red Ale</th>
+      <td>0.057456</td>
+      <td>36.298701</td>
+      <td>1272.398496</td>
+      <td>248.045113</td>
+      <td>13.293233</td>
+    </tr>
+    <tr>
+      <th>American Amber / Red Lager</th>
+      <td>0.049464</td>
+      <td>23.250000</td>
+      <td>1154.413793</td>
+      <td>305.965517</td>
+      <td>13.241379</td>
+    </tr>
+    <tr>
+      <th>American Barleywine</th>
+      <td>0.099000</td>
+      <td>96.000000</td>
+      <td>1368.333333</td>
+      <td>317.000000</td>
+      <td>10.800000</td>
+    </tr>
+    <tr>
+      <th>American Black Ale</th>
+      <td>0.068971</td>
+      <td>68.900000</td>
+      <td>1562.416667</td>
+      <td>261.861111</td>
+      <td>13.888889</td>
+    </tr>
+    <tr>
+      <th>American Blonde Ale</th>
+      <td>0.049635</td>
+      <td>20.983607</td>
+      <td>1320.527778</td>
+      <td>253.222222</td>
+      <td>13.185185</td>
+    </tr>
+    <tr>
+      <th>American Brown Ale</th>
+      <td>0.057926</td>
+      <td>29.894737</td>
+      <td>1282.985714</td>
+      <td>238.928571</td>
+      <td>13.405714</td>
+    </tr>
+    <tr>
+      <th>American Dark Wheat Ale</th>
+      <td>0.052333</td>
+      <td>27.600000</td>
+      <td>1023.714286</td>
+      <td>250.714286</td>
+      <td>13.142857</td>
+    </tr>
+    <tr>
+      <th>American Double / Imperial IPA</th>
+      <td>0.087369</td>
+      <td>93.320000</td>
+      <td>1462.009524</td>
+      <td>213.571429</td>
+      <td>14.163810</td>
+    </tr>
+    <tr>
+      <th>American Double / Imperial Pilsner</th>
+      <td>0.077500</td>
+      <td>85.000000</td>
+      <td>1468.000000</td>
+      <td>324.500000</td>
+      <td>14.000000</td>
+    </tr>
+    <tr>
+      <th>American Double / Imperial Stout</th>
+      <td>0.093667</td>
+      <td>62.000000</td>
+      <td>1664.000000</td>
+      <td>190.222222</td>
+      <td>15.022222</td>
+    </tr>
+    <tr>
+      <th>American IPA</th>
+      <td>0.064528</td>
+      <td>67.634551</td>
+      <td>1484.117925</td>
+      <td>229.358491</td>
+      <td>13.581132</td>
+    </tr>
+    <tr>
+      <th>American India Pale Lager</th>
+      <td>0.062667</td>
+      <td>63.333333</td>
+      <td>2670.000000</td>
+      <td>2.000000</td>
+      <td>13.333333</td>
+    </tr>
+    <tr>
+      <th>American Malt Liquor</th>
+      <td>0.099000</td>
+      <td>NaN</td>
+      <td>2361.000000</td>
+      <td>134.000000</td>
+      <td>24.000000</td>
+    </tr>
+    <tr>
+      <th>American Pale Ale (APA)</th>
+      <td>0.054577</td>
+      <td>44.941176</td>
+      <td>1364.840816</td>
+      <td>244.424490</td>
+      <td>13.198367</td>
+    </tr>
+    <tr>
+      <th>American Pale Lager</th>
+      <td>0.051216</td>
+      <td>26.750000</td>
+      <td>1471.666667</td>
+      <td>270.948718</td>
+      <td>13.333333</td>
+    </tr>
+    <tr>
+      <th>American Pale Wheat Ale</th>
+      <td>0.048411</td>
+      <td>20.688525</td>
+      <td>1443.309278</td>
+      <td>215.412371</td>
+      <td>13.402062</td>
+    </tr>
+    <tr>
+      <th>American Pilsner</th>
+      <td>0.048625</td>
+      <td>23.285714</td>
+      <td>1747.760000</td>
+      <td>229.480000</td>
+      <td>12.480000</td>
+    </tr>
+    <tr>
+      <th>American Porter</th>
+      <td>0.059600</td>
+      <td>31.923077</td>
+      <td>1652.852941</td>
+      <td>185.750000</td>
+      <td>13.764706</td>
+    </tr>
+    <tr>
+      <th>American Stout</th>
+      <td>0.063351</td>
+      <td>41.312500</td>
+      <td>1503.333333</td>
+      <td>252.615385</td>
+      <td>14.256410</td>
+    </tr>
+    <tr>
+      <th>American Strong Ale</th>
+      <td>0.076538</td>
+      <td>65.416667</td>
+      <td>1609.642857</td>
+      <td>193.428571</td>
+      <td>14.000000</td>
+    </tr>
+    <tr>
+      <th>American White IPA</th>
+      <td>0.059636</td>
+      <td>48.833333</td>
+      <td>1657.454545</td>
+      <td>242.272727</td>
+      <td>12.727273</td>
+    </tr>
+    <tr>
+      <th>American Wild Ale</th>
+      <td>0.072167</td>
+      <td>27.000000</td>
+      <td>1950.333333</td>
+      <td>65.833333</td>
+      <td>17.066667</td>
+    </tr>
+    <tr>
+      <th>Baltic Porter</th>
+      <td>0.085167</td>
+      <td>54.000000</td>
+      <td>1497.166667</td>
+      <td>215.500000</td>
+      <td>13.333333</td>
+    </tr>
+    <tr>
+      <th>Belgian Dark Ale</th>
+      <td>0.074500</td>
+      <td>29.666667</td>
+      <td>1724.272727</td>
+      <td>59.636364</td>
+      <td>15.636364</td>
+    </tr>
+    <tr>
+      <th>Belgian IPA</th>
+      <td>0.071353</td>
+      <td>57.000000</td>
+      <td>1849.777778</td>
+      <td>98.277778</td>
+      <td>16.222222</td>
+    </tr>
+    <tr>
+      <th>Belgian Pale Ale</th>
+      <td>0.061174</td>
+      <td>23.875000</td>
+      <td>1641.458333</td>
+      <td>177.166667</td>
+      <td>14.500000</td>
+    </tr>
+    <tr>
+      <th>Belgian Strong Dark Ale</th>
+      <td>0.083833</td>
+      <td>72.000000</td>
+      <td>1532.500000</td>
+      <td>195.000000</td>
+      <td>14.666667</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>Kölsch</th>
+      <td>0.048952</td>
+      <td>21.777778</td>
+      <td>1381.928571</td>
+      <td>250.476190</td>
+      <td>13.333333</td>
+    </tr>
+    <tr>
+      <th>Light Lager</th>
+      <td>0.040417</td>
+      <td>11.666667</td>
+      <td>1661.416667</td>
+      <td>230.083333</td>
+      <td>12.666667</td>
+    </tr>
+    <tr>
+      <th>Low Alcohol Beer</th>
+      <td>0.001000</td>
+      <td>NaN</td>
+      <td>606.000000</td>
+      <td>522.000000</td>
+      <td>16.000000</td>
+    </tr>
+    <tr>
+      <th>Maibock / Helles Bock</th>
+      <td>0.059250</td>
+      <td>27.500000</td>
+      <td>1272.600000</td>
+      <td>318.600000</td>
+      <td>13.600000</td>
+    </tr>
+    <tr>
+      <th>Mead</th>
+      <td>0.071600</td>
+      <td>NaN</td>
+      <td>1373.000000</td>
+      <td>421.400000</td>
+      <td>14.400000</td>
+    </tr>
+    <tr>
+      <th>Milk / Sweet Stout</th>
+      <td>0.054300</td>
+      <td>25.166667</td>
+      <td>1308.900000</td>
+      <td>200.600000</td>
+      <td>14.400000</td>
+    </tr>
+    <tr>
+      <th>Munich Dunkel Lager</th>
+      <td>0.055000</td>
+      <td>20.333333</td>
+      <td>1057.250000</td>
+      <td>184.500000</td>
+      <td>13.000000</td>
+    </tr>
+    <tr>
+      <th>Munich Helles Lager</th>
+      <td>0.049700</td>
+      <td>17.916667</td>
+      <td>1195.950000</td>
+      <td>276.550000</td>
+      <td>12.600000</td>
+    </tr>
+    <tr>
+      <th>Märzen / Oktoberfest</th>
+      <td>0.057724</td>
+      <td>22.904762</td>
+      <td>1292.033333</td>
+      <td>210.466667</td>
+      <td>13.466667</td>
+    </tr>
+    <tr>
+      <th>Oatmeal Stout</th>
+      <td>0.059667</td>
+      <td>28.090909</td>
+      <td>1368.666667</td>
+      <td>221.333333</td>
+      <td>14.000000</td>
+    </tr>
+    <tr>
+      <th>Old Ale</th>
+      <td>0.079500</td>
+      <td>40.000000</td>
+      <td>1829.500000</td>
+      <td>62.000000</td>
+      <td>12.000000</td>
+    </tr>
+    <tr>
+      <th>Other</th>
+      <td>0.048000</td>
+      <td>16.000000</td>
+      <td>2419.000000</td>
+      <td>103.000000</td>
+      <td>12.000000</td>
+    </tr>
+    <tr>
+      <th>Pumpkin Ale</th>
+      <td>0.058435</td>
+      <td>24.818182</td>
+      <td>1501.347826</td>
+      <td>241.913043</td>
+      <td>13.565217</td>
+    </tr>
+    <tr>
+      <th>Quadrupel (Quad)</th>
+      <td>0.104000</td>
+      <td>24.000000</td>
+      <td>1664.500000</td>
+      <td>24.000000</td>
+      <td>16.800000</td>
+    </tr>
+    <tr>
+      <th>Radler</th>
+      <td>0.040333</td>
+      <td>19.666667</td>
+      <td>2050.000000</td>
+      <td>225.333333</td>
+      <td>13.333333</td>
+    </tr>
+    <tr>
+      <th>Rauchbier</th>
+      <td>0.060500</td>
+      <td>NaN</td>
+      <td>2324.500000</td>
+      <td>10.000000</td>
+      <td>16.000000</td>
+    </tr>
+    <tr>
+      <th>Roggenbier</th>
+      <td>0.052500</td>
+      <td>20.000000</td>
+      <td>1635.000000</td>
+      <td>211.000000</td>
+      <td>16.000000</td>
+    </tr>
+    <tr>
+      <th>Russian Imperial Stout</th>
+      <td>0.097636</td>
+      <td>86.500000</td>
+      <td>1294.636364</td>
+      <td>221.636364</td>
+      <td>13.454545</td>
+    </tr>
+    <tr>
+      <th>Rye Beer</th>
+      <td>0.067056</td>
+      <td>52.000000</td>
+      <td>1615.333333</td>
+      <td>158.388889</td>
+      <td>15.733333</td>
+    </tr>
+    <tr>
+      <th>Saison / Farmhouse Ale</th>
+      <td>0.061442</td>
+      <td>28.391304</td>
+      <td>1645.903846</td>
+      <td>197.057692</td>
+      <td>13.846154</td>
+    </tr>
+    <tr>
+      <th>Schwarzbier</th>
+      <td>0.053778</td>
+      <td>31.000000</td>
+      <td>754.888889</td>
+      <td>381.333333</td>
+      <td>12.888889</td>
+    </tr>
+    <tr>
+      <th>Scotch Ale / Wee Heavy</th>
+      <td>0.076267</td>
+      <td>24.230769</td>
+      <td>1545.333333</td>
+      <td>194.200000</td>
+      <td>14.666667</td>
+    </tr>
+    <tr>
+      <th>Scottish Ale</th>
+      <td>0.066333</td>
+      <td>26.909091</td>
+      <td>896.000000</td>
+      <td>288.736842</td>
+      <td>13.473684</td>
+    </tr>
+    <tr>
+      <th>Shandy</th>
+      <td>0.045333</td>
+      <td>NaN</td>
+      <td>1372.666667</td>
+      <td>369.000000</td>
+      <td>13.333333</td>
+    </tr>
+    <tr>
+      <th>Smoked Beer</th>
+      <td>0.051000</td>
+      <td>35.000000</td>
+      <td>1584.000000</td>
+      <td>29.000000</td>
+      <td>16.000000</td>
+    </tr>
+    <tr>
+      <th>Tripel</th>
+      <td>0.086818</td>
+      <td>23.500000</td>
+      <td>1557.636364</td>
+      <td>155.454545</td>
+      <td>14.990909</td>
+    </tr>
+    <tr>
+      <th>Vienna Lager</th>
+      <td>0.051050</td>
+      <td>24.357143</td>
+      <td>832.750000</td>
+      <td>296.250000</td>
+      <td>13.000000</td>
+    </tr>
+    <tr>
+      <th>Wheat Ale</th>
+      <td>0.060000</td>
+      <td>24.000000</td>
+      <td>2666.000000</td>
+      <td>3.000000</td>
+      <td>16.000000</td>
+    </tr>
+    <tr>
+      <th>Winter Warmer</th>
+      <td>0.070400</td>
+      <td>24.625000</td>
+      <td>1426.933333</td>
+      <td>221.733333</td>
+      <td>13.066667</td>
+    </tr>
+    <tr>
+      <th>Witbier</th>
+      <td>0.053551</td>
+      <td>16.208333</td>
+      <td>1331.137255</td>
+      <td>257.490196</td>
+      <td>13.333333</td>
+    </tr>
+  </tbody>
+</table>
+<p>99 rows × 5 columns</p>
+</div>
+
+<pre><code class="language-python"># How many of each style of beer are there?
+fulldat.groupby('style').count()
+
+# Clearly some beer types are much more common than others
+</code></pre>
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>abv</th>
+      <th>ibu</th>
+      <th>beer_id</th>
+      <th>beer_name</th>
+      <th>brewery_id</th>
+      <th>ounces</th>
+      <th>brewery_name</th>
+      <th>city</th>
+      <th>state</th>
+    </tr>
+    <tr>
+      <th>style</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Abbey Single Ale</th>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>Altbier</th>
+      <td>13</td>
+      <td>8</td>
+      <td>13</td>
+      <td>13</td>
+      <td>13</td>
+      <td>13</td>
+      <td>13</td>
+      <td>13</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <th>American Adjunct Lager</th>
+      <td>18</td>
+      <td>11</td>
+      <td>18</td>
+      <td>18</td>
+      <td>18</td>
+      <td>18</td>
+      <td>18</td>
+      <td>18</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <th>American Amber / Red Ale</th>
+      <td>125</td>
+      <td>77</td>
+      <td>133</td>
+      <td>133</td>
+      <td>133</td>
+      <td>133</td>
+      <td>133</td>
+      <td>133</td>
+      <td>133</td>
+    </tr>
+    <tr>
+      <th>American Amber / Red Lager</th>
+      <td>28</td>
+      <td>16</td>
+      <td>29</td>
+      <td>29</td>
+      <td>29</td>
+      <td>29</td>
+      <td>29</td>
+      <td>29</td>
+      <td>29</td>
+    </tr>
+    <tr>
+      <th>American Barleywine</th>
+      <td>3</td>
+      <td>2</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>American Black Ale</th>
+      <td>35</td>
+      <td>20</td>
+      <td>36</td>
+      <td>36</td>
+      <td>36</td>
+      <td>36</td>
+      <td>36</td>
+      <td>36</td>
+      <td>36</td>
+    </tr>
+    <tr>
+      <th>American Blonde Ale</th>
+      <td>104</td>
+      <td>61</td>
+      <td>108</td>
+      <td>108</td>
+      <td>108</td>
+      <td>108</td>
+      <td>108</td>
+      <td>108</td>
+      <td>108</td>
+    </tr>
+    <tr>
+      <th>American Brown Ale</th>
+      <td>68</td>
+      <td>38</td>
+      <td>70</td>
+      <td>70</td>
+      <td>70</td>
+      <td>70</td>
+      <td>70</td>
+      <td>70</td>
+      <td>70</td>
+    </tr>
+    <tr>
+      <th>American Dark Wheat Ale</th>
+      <td>6</td>
+      <td>5</td>
+      <td>7</td>
+      <td>7</td>
+      <td>7</td>
+      <td>7</td>
+      <td>7</td>
+      <td>7</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>American Double / Imperial IPA</th>
+      <td>103</td>
+      <td>75</td>
+      <td>105</td>
+      <td>105</td>
+      <td>105</td>
+      <td>105</td>
+      <td>105</td>
+      <td>105</td>
+      <td>105</td>
+    </tr>
+    <tr>
+      <th>American Double / Imperial Pilsner</th>
+      <td>2</td>
+      <td>1</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>American Double / Imperial Stout</th>
+      <td>9</td>
+      <td>3</td>
+      <td>9</td>
+      <td>9</td>
+      <td>9</td>
+      <td>9</td>
+      <td>9</td>
+      <td>9</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>American IPA</th>
+      <td>417</td>
+      <td>301</td>
+      <td>424</td>
+      <td>424</td>
+      <td>424</td>
+      <td>424</td>
+      <td>424</td>
+      <td>424</td>
+      <td>424</td>
+    </tr>
+    <tr>
+      <th>American India Pale Lager</th>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>American Malt Liquor</th>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>American Pale Ale (APA)</th>
+      <td>239</td>
+      <td>153</td>
+      <td>245</td>
+      <td>245</td>
+      <td>245</td>
+      <td>245</td>
+      <td>245</td>
+      <td>245</td>
+      <td>245</td>
+    </tr>
+    <tr>
+      <th>American Pale Lager</th>
+      <td>37</td>
+      <td>16</td>
+      <td>39</td>
+      <td>39</td>
+      <td>39</td>
+      <td>39</td>
+      <td>39</td>
+      <td>39</td>
+      <td>39</td>
+    </tr>
+    <tr>
+      <th>American Pale Wheat Ale</th>
+      <td>95</td>
+      <td>61</td>
+      <td>97</td>
+      <td>97</td>
+      <td>97</td>
+      <td>97</td>
+      <td>97</td>
+      <td>97</td>
+      <td>97</td>
+    </tr>
+    <tr>
+      <th>American Pilsner</th>
+      <td>24</td>
+      <td>14</td>
+      <td>25</td>
+      <td>25</td>
+      <td>25</td>
+      <td>25</td>
+      <td>25</td>
+      <td>25</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>American Porter</th>
+      <td>65</td>
+      <td>39</td>
+      <td>68</td>
+      <td>68</td>
+      <td>68</td>
+      <td>68</td>
+      <td>68</td>
+      <td>68</td>
+      <td>68</td>
+    </tr>
+    <tr>
+      <th>American Stout</th>
+      <td>37</td>
+      <td>16</td>
+      <td>39</td>
+      <td>39</td>
+      <td>39</td>
+      <td>39</td>
+      <td>39</td>
+      <td>39</td>
+      <td>39</td>
+    </tr>
+    <tr>
+      <th>American Strong Ale</th>
+      <td>13</td>
+      <td>12</td>
+      <td>14</td>
+      <td>14</td>
+      <td>14</td>
+      <td>14</td>
+      <td>14</td>
+      <td>14</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>American White IPA</th>
+      <td>11</td>
+      <td>6</td>
+      <td>11</td>
+      <td>11</td>
+      <td>11</td>
+      <td>11</td>
+      <td>11</td>
+      <td>11</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>American Wild Ale</th>
+      <td>6</td>
+      <td>2</td>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>Baltic Porter</th>
+      <td>6</td>
+      <td>3</td>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>Belgian Dark Ale</th>
+      <td>10</td>
+      <td>3</td>
+      <td>11</td>
+      <td>11</td>
+      <td>11</td>
+      <td>11</td>
+      <td>11</td>
+      <td>11</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>Belgian IPA</th>
+      <td>17</td>
+      <td>3</td>
+      <td>18</td>
+      <td>18</td>
+      <td>18</td>
+      <td>18</td>
+      <td>18</td>
+      <td>18</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <th>Belgian Pale Ale</th>
+      <td>23</td>
+      <td>8</td>
+      <td>24</td>
+      <td>24</td>
+      <td>24</td>
+      <td>24</td>
+      <td>24</td>
+      <td>24</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <th>Belgian Strong Dark Ale</th>
+      <td>6</td>
+      <td>1</td>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>Kölsch</th>
+      <td>42</td>
+      <td>27</td>
+      <td>42</td>
+      <td>42</td>
+      <td>42</td>
+      <td>42</td>
+      <td>42</td>
+      <td>42</td>
+      <td>42</td>
+    </tr>
+    <tr>
+      <th>Light Lager</th>
+      <td>12</td>
+      <td>3</td>
+      <td>12</td>
+      <td>12</td>
+      <td>12</td>
+      <td>12</td>
+      <td>12</td>
+      <td>12</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>Low Alcohol Beer</th>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>Maibock / Helles Bock</th>
+      <td>4</td>
+      <td>2</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>Mead</th>
+      <td>5</td>
+      <td>0</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>Milk / Sweet Stout</th>
+      <td>10</td>
+      <td>6</td>
+      <td>10</td>
+      <td>10</td>
+      <td>10</td>
+      <td>10</td>
+      <td>10</td>
+      <td>10</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>Munich Dunkel Lager</th>
+      <td>4</td>
+      <td>3</td>
+      <td>4</td>
+      <td>4</td>
+      <td>4</td>
+      <td>4</td>
+      <td>4</td>
+      <td>4</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>Munich Helles Lager</th>
+      <td>20</td>
+      <td>12</td>
+      <td>20</td>
+      <td>20</td>
+      <td>20</td>
+      <td>20</td>
+      <td>20</td>
+      <td>20</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th>Märzen / Oktoberfest</th>
+      <td>29</td>
+      <td>21</td>
+      <td>30</td>
+      <td>30</td>
+      <td>30</td>
+      <td>30</td>
+      <td>30</td>
+      <td>30</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <th>Oatmeal Stout</th>
+      <td>18</td>
+      <td>11</td>
+      <td>18</td>
+      <td>18</td>
+      <td>18</td>
+      <td>18</td>
+      <td>18</td>
+      <td>18</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <th>Old Ale</th>
+      <td>2</td>
+      <td>1</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>Other</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>Pumpkin Ale</th>
+      <td>23</td>
+      <td>11</td>
+      <td>23</td>
+      <td>23</td>
+      <td>23</td>
+      <td>23</td>
+      <td>23</td>
+      <td>23</td>
+      <td>23</td>
+    </tr>
+    <tr>
+      <th>Quadrupel (Quad)</th>
+      <td>4</td>
+      <td>1</td>
+      <td>4</td>
+      <td>4</td>
+      <td>4</td>
+      <td>4</td>
+      <td>4</td>
+      <td>4</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>Radler</th>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>Rauchbier</th>
+      <td>2</td>
+      <td>0</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>Roggenbier</th>
+      <td>2</td>
+      <td>1</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>Russian Imperial Stout</th>
+      <td>11</td>
+      <td>8</td>
+      <td>11</td>
+      <td>11</td>
+      <td>11</td>
+      <td>11</td>
+      <td>11</td>
+      <td>11</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>Rye Beer</th>
+      <td>18</td>
+      <td>9</td>
+      <td>18</td>
+      <td>18</td>
+      <td>18</td>
+      <td>18</td>
+      <td>18</td>
+      <td>18</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <th>Saison / Farmhouse Ale</th>
+      <td>52</td>
+      <td>23</td>
+      <td>52</td>
+      <td>52</td>
+      <td>52</td>
+      <td>52</td>
+      <td>52</td>
+      <td>52</td>
+      <td>52</td>
+    </tr>
+    <tr>
+      <th>Schwarzbier</th>
+      <td>9</td>
+      <td>4</td>
+      <td>9</td>
+      <td>9</td>
+      <td>9</td>
+      <td>9</td>
+      <td>9</td>
+      <td>9</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>Scotch Ale / Wee Heavy</th>
+      <td>15</td>
+      <td>13</td>
+      <td>15</td>
+      <td>15</td>
+      <td>15</td>
+      <td>15</td>
+      <td>15</td>
+      <td>15</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <th>Scottish Ale</th>
+      <td>18</td>
+      <td>11</td>
+      <td>19</td>
+      <td>19</td>
+      <td>19</td>
+      <td>19</td>
+      <td>19</td>
+      <td>19</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <th>Shandy</th>
+      <td>3</td>
+      <td>0</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>Smoked Beer</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>Tripel</th>
+      <td>11</td>
+      <td>4</td>
+      <td>11</td>
+      <td>11</td>
+      <td>11</td>
+      <td>11</td>
+      <td>11</td>
+      <td>11</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>Vienna Lager</th>
+      <td>20</td>
+      <td>14</td>
+      <td>20</td>
+      <td>20</td>
+      <td>20</td>
+      <td>20</td>
+      <td>20</td>
+      <td>20</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th>Wheat Ale</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>Winter Warmer</th>
+      <td>15</td>
+      <td>8</td>
+      <td>15</td>
+      <td>15</td>
+      <td>15</td>
+      <td>15</td>
+      <td>15</td>
+      <td>15</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <th>Witbier</th>
+      <td>49</td>
+      <td>24</td>
+      <td>51</td>
+      <td>51</td>
+      <td>51</td>
+      <td>51</td>
+      <td>51</td>
+      <td>51</td>
+      <td>51</td>
+    </tr>
+  </tbody>
+</table>
+<p>99 rows × 9 columns</p>
+</div>
+
+<pre><code class="language-python">import matplotlib.pyplot as plt
+# Need to add inline function to make visualizations appear in Jupyter
+%matplotlib inline
+
+# What's the distribution of ABV, IBU, and beer size(oz)? 
+fulldat['abv'].plot.hist(bins=15)
+plt.title('Distribution of ABV')
+# Looks like most beers are around 5-6% ABV, but there's a decent amoutn in the 6-10% range
+
+</code></pre>
+
+<pre><code>&lt;matplotlib.text.Text at 0x11157ecd0&gt;
+</code></pre>
+
+<p><img src="output_12_1.png" alt="png" /></p>
+
+<pre><code class="language-python">fulldat['abv'].plot(kind='box', title='ABV Distribution')
+
+</code></pre>
+
+<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x10d82ce90&gt;
+</code></pre>
+
+<p><img src="output_13_1.png" alt="png" /></p>
+
+<p>From the boxplot above, 50% of the beers have an ABV between about 5-7% (the 1st and 3rd quartiles), with a median just below 6%. There are several outliers that have over 10% ABV.</p>
+
+<pre><code class="language-python">fulldat['ibu'].hist(bins=15)
+plt.title('Distribution of IBU')
+</code></pre>
+
+<pre><code>&lt;matplotlib.text.Text at 0x1138f0a90&gt;
+</code></pre>
+
+<p><img src="output_15_1.png" alt="png" /></p>
+
+<p>There are beers at the lower end of the IBU scale (IBU = International Bitterness Units), indicating more beers are less hoppy. A higher IBU means the beer has a hoppier taste, though this measure is not entirely reliable, as other beer characteristics such as the malt could cover up some of the bitterness in high-IBU beers.</p>
+
+<pre><code class="language-python">fulldat['ibu'].plot(kind='box', title='Boxplot of IBU')
+</code></pre>
+
+<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1138f0090&gt;
+</code></pre>
+
+<p><img src="output_17_1.png" alt="png" /></p>
+
+<pre><code class="language-python">fulldat['ounces'].hist()
+</code></pre>
+
+<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x113a27c90&gt;
+</code></pre>
+
+<p><img src="output_18_1.png" alt="png" /></p>
+
+<p><em>plt.title() does not mesh well with df.hist()</em>
+autosave stops working</p>
+
+<p>Perhaps not surprisingly, almost all beers in the dataset are
+either 12oz or 16oz varieties</p>
+
+<p>One may wonder if ABV and IBU are related.</p>
+
+<pre><code class="language-python">plt.scatter(fulldat['ibu'], fulldat['abv'])
+plt.title('IBU vs ABV')
+plt.xlabel('IBU')
+plt.ylabel('Alcohol by Volume (ABV) %' )
+</code></pre>
+
+<pre><code>&lt;matplotlib.text.Text at 0x11428bed0&gt;
+</code></pre>
+
+<p><img src="output_20_1.png" alt="png" /></p>
+
+<p>As the above graph shows, there appears to be a moderate positive relationship between ABV and IBU. Hoppier beers tend also to be stronger beers.</p>
+
+<pre><code class="language-python"># Create a scatterplot matrix
+pd.scatter_matrix(fulldat[['abv', 'ibu', 'ounces']], diagonal='kde', color='k', alpha=0.3)
+</code></pre>
+
+<pre><code>array([[&lt;matplotlib.axes._subplots.AxesSubplot object at 0x117eb1890&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x11843f890&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x11852e290&gt;],
+       [&lt;matplotlib.axes._subplots.AxesSubplot object at 0x118307110&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x1189fc590&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x118a4ab90&gt;],
+       [&lt;matplotlib.axes._subplots.AxesSubplot object at 0x118ad8c90&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x118b5bb10&gt;,
+        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x115736b90&gt;]], dtype=object)
+</code></pre>
+
+<p><img src="output_22_1.png" alt="png" /></p>
+
+<pre><code class="language-python"># How many breweries are in each state?
+fulldat['brewery_name'].groupby([fulldat['state']]).count().sort_values(ascending=False)
+</code></pre>
+
+<pre><code>state
+ CO    265
+ CA    183
+ MI    162
+ IN    139
+ TX    130
+ OR    125
+ PA    100
+ IL     91
+ WI     87
+ MA     82
+ NY     74
+ WA     68
+ NC     59
+ FL     58
+ MN     55
+ OH     49
+ AZ     47
+ MO     42
+ VA     40
+ MT     40
+ ID     30
+ IA     30
+ RI     27
+ CT     27
+ VT     27
+ HI     27
+ ME     27
+ UT     26
+ AK     25
+ NE     25
+ KS     23
+ MD     21
+ KY     21
+ LA     19
+ OK     19
+ GA     16
+ WY     15
+ NM     14
+ SC     14
+ NV     11
+ MS     11
+ AL     10
+ NH      8
+ NJ      8
+ DC      8
+ SD      7
+ TN      6
+ AR      5
+ ND      3
+ WV      2
+ DE      2
+dtype: int64
+</code></pre>
+
+<p>Colorado has the most breweries, with 265!</p>
+
+<pre><code class="language-python"># How many types of beer are available in each state?
+fulldat['style'].groupby(fulldat['state']).value_counts()
+</code></pre>
+
+<pre><code>state                                     
+ AK    American IPA                           7
+       American Blonde Ale                    3
+       American Amber / Red Ale               2
+       American Pale Ale (APA)                2
+       Scottish Ale                           2
+       Altbier                                1
+       American Brown Ale                     1
+       Cream Ale                              1
+       Czech Pilsener                         1
+       English Pale Ale                       1
+       Hefeweizen                             1
+       Irish Dry Stout                        1
+       Irish Red Ale                          1
+       Witbier                                1
+ AL    American IPA                           2
+       American Pale Ale (APA)                2
+       American Brown Ale                     1
+       American Double / Imperial IPA         1
+       English Brown Ale                      1
+       Kölsch                                 1
+       Milk / Sweet Stout                     1
+       Oatmeal Stout                          1
+ AR    American Amber / Red Ale               1
+       American Pale Ale (APA)                1
+       American Pilsner                       1
+       Extra Special / Strong Bitter (ESB)    1
+       Oatmeal Stout                          1
+ AZ    American IPA                           9
+       American Amber / Red Ale               6
+       American Pale Ale (APA)                4
+                                             ..
+ WI    American Porter                        2
+       Cider                                  2
+       Light Lager                            2
+       Munich Helles Lager                    2
+       American Brown Ale                     1
+       American Double / Imperial IPA         1
+       American Malt Liquor                   1
+       American Stout                         1
+       American Strong Ale                    1
+       American White IPA                     1
+       Bock                                   1
+       Czech Pilsener                         1
+       German Pilsener                        1
+       Kölsch                                 1
+       Oatmeal Stout                          1
+       Saison / Farmhouse Ale                 1
+       Winter Warmer                          1
+       Witbier                                1
+ WV    American Black Ale                     1
+       American Pale Ale (APA)                1
+ WY    American Pale Ale (APA)                3
+       American Amber / Red Ale               2
+       American IPA                           2
+       English Brown Ale                      2
+       American Blonde Ale                    1
+       American Brown Ale                     1
+       American Pale Wheat Ale                1
+       American Pilsner                       1
+       Foreign / Export Stout                 1
+       Vienna Lager                           1
+dtype: int64
+</code></pre>
+
+<pre><code class="language-python"># How many different beers are in each state?
+pd.crosstab(fulldat.state, fulldat.style)
+</code></pre>
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>col_0</th>
+      <th>&lt;pandas.core.style.Styler object at 0x119b02c90&gt;</th>
+    </tr>
+    <tr>
+      <th>state</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>AK</th>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>AL</th>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>AR</th>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>AZ</th>
+      <td>47</td>
+    </tr>
+    <tr>
+      <th>CA</th>
+      <td>183</td>
+    </tr>
+    <tr>
+      <th>CO</th>
+      <td>265</td>
+    </tr>
+    <tr>
+      <th>CT</th>
+      <td>27</td>
+    </tr>
+    <tr>
+      <th>DC</th>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>DE</th>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>FL</th>
+      <td>58</td>
+    </tr>
+    <tr>
+      <th>GA</th>
+      <td>16</td>
+    </tr>
+    <tr>
+      <th>HI</th>
+      <td>27</td>
+    </tr>
+    <tr>
+      <th>IA</th>
+      <td>30</td>
+    </tr>
+    <tr>
+      <th>ID</th>
+      <td>30</td>
+    </tr>
+    <tr>
+      <th>IL</th>
+      <td>91</td>
+    </tr>
+    <tr>
+      <th>IN</th>
+      <td>139</td>
+    </tr>
+    <tr>
+      <th>KS</th>
+      <td>23</td>
+    </tr>
+    <tr>
+      <th>KY</th>
+      <td>21</td>
+    </tr>
+    <tr>
+      <th>LA</th>
+      <td>19</td>
+    </tr>
+    <tr>
+      <th>MA</th>
+      <td>82</td>
+    </tr>
+    <tr>
+      <th>MD</th>
+      <td>21</td>
+    </tr>
+    <tr>
+      <th>ME</th>
+      <td>27</td>
+    </tr>
+    <tr>
+      <th>MI</th>
+      <td>162</td>
+    </tr>
+    <tr>
+      <th>MN</th>
+      <td>55</td>
+    </tr>
+    <tr>
+      <th>MO</th>
+      <td>42</td>
+    </tr>
+    <tr>
+      <th>MS</th>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>MT</th>
+      <td>40</td>
+    </tr>
+    <tr>
+      <th>NC</th>
+      <td>59</td>
+    </tr>
+    <tr>
+      <th>ND</th>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>NE</th>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>NH</th>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>NJ</th>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>NM</th>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>NV</th>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>NY</th>
+      <td>74</td>
+    </tr>
+    <tr>
+      <th>OH</th>
+      <td>49</td>
+    </tr>
+    <tr>
+      <th>OK</th>
+      <td>19</td>
+    </tr>
+    <tr>
+      <th>OR</th>
+      <td>125</td>
+    </tr>
+    <tr>
+      <th>PA</th>
+      <td>100</td>
+    </tr>
+    <tr>
+      <th>RI</th>
+      <td>27</td>
+    </tr>
+    <tr>
+      <th>SC</th>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>SD</th>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>TN</th>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>TX</th>
+      <td>130</td>
+    </tr>
+    <tr>
+      <th>UT</th>
+      <td>26</td>
+    </tr>
+    <tr>
+      <th>VA</th>
+      <td>40</td>
+    </tr>
+    <tr>
+      <th>VT</th>
+      <td>27</td>
+    </tr>
+    <tr>
+      <th>WA</th>
+      <td>68</td>
+    </tr>
+    <tr>
+      <th>WI</th>
+      <td>87</td>
+    </tr>
+    <tr>
+      <th>WV</th>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>WY</th>
+      <td>15</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<pre><code class="language-python">
+</code></pre>
+
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="//tags/r/">R</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  <nav>
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--disabled">
+          
+            <i class="fa fa-angle-left"></i>
+            <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+          </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="/2017/06/my-experience-at-the-cascadia-r-conference/" data-tooltip="My Experience at the Cascadia R Conference">
+          
+            <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+            <i class="fa fa-angle-right"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </nav>
+  <ul class="post-actions post-action-share">
+    
+    
+      <li class="post-action">
+        <a class="post-action-btn btn btn--default" href="#disqus_thread">
+          <i class="fa fa-comment-o"></i>
+        </a>
+      </li>
+    
+    <li class="post-action">
+      
+        <a class="post-action-btn btn btn--default" href="#">
+      
+        <i class="fa fa-list"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2017 Joseph Carl. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        <div class="post-actions-wrap">
+  <nav>
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--disabled">
+          
+            <i class="fa fa-angle-left"></i>
+            <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+          </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="/2017/06/my-experience-at-the-cascadia-r-conference/" data-tooltip="My Experience at the Cascadia R Conference">
+          
+            <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+            <i class="fa fa-angle-right"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </nav>
+  <ul class="post-actions post-action-share">
+    
+    
+      <li class="post-action">
+        <a class="post-action-btn btn btn--default" href="#disqus_thread">
+          <i class="fa fa-comment-o"></i>
+        </a>
+      </li>
+    
+    <li class="post-action">
+      
+        <a class="post-action-btn btn btn--default" href="#">
+      
+        <i class="fa fa-list"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <ul class="share-options">
+    <li class="share-option">
+      <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=%2f2017%2f06%2fcraft-beers%2f">
+        <i class="fa fa-google-plus"></i><span>Share on Google Plus</span>
+      </a>
+    </li>
+    <li class="share-option">
+      <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=%2f2017%2f06%2fcraft-beers%2f">
+        <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+      </a>
+    </li>
+    <li class="share-option">
+      <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=%2f2017%2f06%2fcraft-beers%2f">
+        <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://avatars0.githubusercontent.com/u/23249449?v=3&amp;u=2245b834f214a44270c8ce6800dfa6a36f38b577&amp;s=400" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Joseph Carl</h4>
+    
+      <div id="about-card-bio">Biker, Hiker, Pianist, and Aspiring Data Analyst</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Master&rsquo;s in Business Analytics Student at Seattle University
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Seattle, WA, USA
+      </div>
+    
+  </div>
+</div>
+
+    <div id="algolia-search-modal" class="modal-container">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="close-button"><i class="fa fa-close"></i></span>
+      <a href="https://algolia.com" target="_blank" class="searchby-algolia text-color-light link-unstyled">
+        <span class="searchby-algolia-text text-color-light text-small">by</span>
+        <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
+      </a>
+      <i class="search-icon fa fa-search"></i>
+      <form id="algolia-search-form">
+        <input type="text" id="algolia-search-input" name="search"
+          class="form-control input--large search-input" placeholder="Search" />
+      </form>
+    </div>
+    <div class="modal-body">
+      <div class="no-result text-color-light text-center">no post found</div>
+      <div class="results">
+        
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="/2017/06/craft-beers/">
+                <h3 class="media-heading">Craft Beers</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jun 6, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"># set wd import os os.chdir(&quot;/Users/josephscarl/Documents/Notebooks/Craft_Beers&quot;) # Read in dataset import pandas as pd beers = pd.read_csv(&quot;beers.csv&quot;, header=0) # Data source: https://www.kaggle.com/nickhould/craft-cans # Preview the data beers.head() # index got read in weird, so we'll delete column 'Unnamed: 0'     Unnamed: 0 abv ibu id name style brewery_id ounces     0 0 0.050 NaN 1436 Pub Beer American Pale Lager 408 12.0   1 1 0.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="/2017/06/my-experience-at-the-cascadia-r-conference/">
+                <h3 class="media-heading">My Experience at the Cascadia R Conference</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jun 6, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">The past few weeks have been crazy with finishing final projects and taking final exams for spring quarter. This past week I also took a much-needed break between quarters for a road trip to the Canadian Rockies! I enjoyed recharging with some great hiking around Banff and Kootenay National Parks and checking out the natural hot springs at Radium Hot Springs. Plus, because Canada is celebrating its 150th birthday this year, admission to the parks was free!</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="/2017/05/gearing-up-for-the-cascadia-r-conference/">
+                <h3 class="media-heading">Gearing Up for the Cascadia R Conference</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  May 5, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">The first ever Cascadia R Conference is less than a month away in Portland, OR, and I am excited to be attending! On top of that, I am thrilled to say my lightning talk proposal, &ldquo;Building a Personal Website with Blogdown and Github Pages&rdquo; has been accepted. I&rsquo;ll be talking about how I built this very website in RStudio using the blogdown package. As the blogdown package is quite new, people using other static site generators like Jekyll may not know much about it.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="/2017/04/creating-a-reproducible-workflow-in-r/">
+                <h3 class="media-heading">Creating a Reproducible Workflow in R</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Apr 4, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">For starters, I&rsquo;m happy to say that I fixed the website build error I had mentioned in my first blog post. After plenty of head scratching, rereading the tutorial, and staring at my config.toml file, I finally realized I had a tiny typo in my publishDir file path, which prevented the documents from being copied to their new folder as expected. *facepalm*. I&rsquo;m not sure how I managed to miss it the first time, but I&rsquo;m glad to have it fixed now.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="/2017/04/first-blog-post/">
+                <h3 class="media-heading">First Blog Post</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Apr 4, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">I finally took the plunge and am attempting blogging. Specifically, as this site is directly connected to my Github, it seems like a great place to showcase some of my projects and write about my experiences as I learn data analytics. Stack Overflow and numerous blogs have come to my aid as I have been learning R and Python over the last several months, so I hope I can use this blog to share some of the things I&rsquo;ve learned as well.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="/post/">
+                <h3 class="media-heading">Posts</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jun 6, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+      </div>
+    </div>
+    <div class="modal-footer">
+      <p class="results-count text-medium"
+         data-message-zero="no post found"
+         data-message-one="1 post found"
+         data-message-other="{n} posts found">
+         6 posts found
+      </p>
+    </div>
+  </div>
+</div>
+    
+  
+    
+    <div id="cover" style="background-image:url('/images/cover-v1.2.0.jpg');"></div>
+  
+
+
+    
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.js"></script>
+
+
+<script src="/js/script-wl33z0n6ocaypepiqrazthtivfrliqijej4rq8ek8gvrv1awftmgjuv8k4zc.min.js"></script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight').each(function(i, block) {
+    var code = "";
+    hljs.highlightAuto(block.innerText).value.split(/\r\n|\r|\n/).forEach(function(line) {
+      code += "<span class=\"line\">" + line + "</span><br>";
+    });
+    if (code.length > 0) {
+      block.innerHTML = code;  
+    }
+  });
+  $('pre > code').each(function(i, block) {
+    $(this).addClass('codeblock');
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = '\/2017\/06\/craft-beers\/';
+          
+            this.page.identifier = '\/2017\/06\/craft-beers\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'hugo-tranquilpeak-theme';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+
+    
+  </body>
+</html>
+
