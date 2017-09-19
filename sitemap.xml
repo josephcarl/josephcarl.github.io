@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://josephcarl.github.io/2017/09/visualizing-seattle-bike-collisions/</loc>
+    <lastmod>2017-09-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://josephcarl.github.io/2017/06/my-experience-at-the-cascadia-r-conference/</loc>
     <lastmod>2017-06-18T00:00:00+00:00</lastmod>
   </url>
@@ -31,6 +36,12 @@
   </url>
   
   <url>
+    <loc>https://josephcarl.github.io/tags/biking/</loc>
+    <lastmod>2017-09-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://josephcarl.github.io/categories/</loc>
     <priority>0</priority>
   </url>
@@ -49,7 +60,7 @@
   
   <url>
     <loc>https://josephcarl.github.io/</loc>
-    <lastmod>2017-06-18T00:00:00+00:00</lastmod>
+    <lastmod>2017-09-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -61,25 +72,31 @@
   
   <url>
     <loc>https://josephcarl.github.io/post/</loc>
-    <lastmod>2017-06-18T00:00:00+00:00</lastmod>
+    <lastmod>2017-09-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://josephcarl.github.io/tags/r/</loc>
-    <lastmod>2017-06-18T00:00:00+00:00</lastmod>
+    <lastmod>2017-09-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://josephcarl.github.io/categories/r/</loc>
-    <lastmod>2017-06-18T00:00:00+00:00</lastmod>
+    <lastmod>2017-09-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://josephcarl.github.io/tags/rstudio/</loc>
-    <lastmod>2017-05-12T00:00:00+00:00</lastmod>
+    <lastmod>2017-09-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://josephcarl.github.io/tags/seattle/</loc>
+    <lastmod>2017-09-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -90,6 +107,12 @@
   
   <url>
     <loc>https://josephcarl.github.io/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://josephcarl.github.io/tags/transportation/</loc>
+    <lastmod>2017-09-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
