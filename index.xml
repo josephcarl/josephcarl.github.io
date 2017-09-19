@@ -328,18 +328,22 @@ bikedat &amp;lt;- bikedat %&amp;gt;%
 
 &lt;h2 id=&#34;professional-experience&#34;&gt;Professional Experience&lt;/h2&gt;
 
-&lt;p&gt;&lt;strong&gt;Data Analyst Intern&lt;/strong&gt; | June 2017 - Present&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Data Analyst Intern&lt;/strong&gt; | June 2017 - August 2017&lt;/p&gt;
 
 &lt;p&gt;CommerceHub | Seattle, WA&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Assisting in developing lifetime value (LTV) and churn models for over 1500 products using R&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Developed lifetime value (LTV) and churn models for over 106,000 products using R, forecasted to add over $36 million in revenue for clients&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Created Bayesian structural time series model to demonstrate that a merchant’s change in
+shipping terms on Amazon resulted in a 10% lift in sales&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;Developed gradient boosting model to predict with 88% accuracy if a product will be reordered&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;Building dashboards in Power BI to show gross sales and growth across merchants, product categories, and sales channels&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Built dashboards in Power BI to show gross sales and growth across merchants, product
+categories, and sales channels&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;Building dashboards using Prometheus and Grafana to monitor changes in inventory and product feeds between merchants and sales channels&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Built dashboards using Prometheus and Grafana to monitor changes in inventory and product feeds between merchants and sales channels&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;strong&gt;Financial Institution Specialist&lt;/strong&gt; | July 2015 - August 2016&lt;/p&gt;
